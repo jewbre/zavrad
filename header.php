@@ -15,6 +15,6 @@
 
     <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link href='/css/main.css' rel='stylesheet' type='text/css'>
+    <link href='<?=baseUrl("css/main.css")?>' rel='stylesheet' type='text/css'>
 </head>
 <body>

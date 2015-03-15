@@ -17,7 +17,6 @@
 $files = array(
 //    array(name, path, includeWhen)
 //        "includeWhen" => "*" | array("route1", "route2", "route3")
-    array("constants","","*"),
 
     // Models
     array("MDBConnection","model","*"),
@@ -48,6 +47,7 @@ $files = array(
 );
 
 include_once "functions.php";
+include_once "constants.php";
 
 foreach($files as $file) {
     if($file[2] == "*" || in_array($atrs[0], $file[2])) {

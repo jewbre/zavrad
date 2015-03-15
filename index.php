@@ -93,8 +93,10 @@ switch($atrs[0]) {
     case "test":
         $view = new VTest();
         break;
-    default : var_dump("default akcija: ".$route, $atrs);
-        var_dump(CLogin::getLoggedIn());
+    default :
+//        var_dump("default akcija: ".$route, $atrs);
+//        var_dump(CLogin::getLoggedIn());
+        include_once "index2.html";
         die();
 }
 

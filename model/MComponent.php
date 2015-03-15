@@ -108,9 +108,11 @@ class MComponent {
             $db = MDBConnection::getConnection();
             $sql = $db->prepare("SELECT * FROM component WHERE name = ?");
             $sql->execute(array($params->data->name->value));
-            if($sql->fetch()) {
-                $params->data->name->error = t("componentNameAlreadyExists");
-                $valid = false;
+            if($result = $sql->fetch(PDO::FETCH_OBJ)) {
+                if($result->id != $params->data->id) {
+                    $params->data->name->error = t("componentNameAlreadyExists");
+                    $valid = false;
+                }
             }
         }
 

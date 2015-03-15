@@ -7,12 +7,16 @@
  */
 
 function t($value){
-    include "/lang/" . $_SESSION["lang"] . ".php";
+    include "lang/" . $_SESSION["lang"] . ".php";
     if(!isset($lang[$value])) return "";
     return $lang[$value];
 
 }
 
 function image($image) {
-    return "http://" . $_SERVER['SERVER_NAME'] . "/images/" . $image;
+    return baseUrl("images/".$image);
+}
+
+function baseUrl($url) {
+    return "http://".$_SERVER['SERVER_NAME']."/".$url;
 }

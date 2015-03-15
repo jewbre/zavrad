@@ -22,16 +22,16 @@
 <section>
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
-    <script src="/js/basic/angular.min.js"></script>
+    <script src="<?=baseUrl("js/basic/angular.min.js")?>"></script>
 
-    <script src="/js/controllers/main.js"></script>
-    <script src="/js/controllers/head.js"></script>
-    <script src="/js/controllers/registration.js"></script>
-    <script src="/js/controllers/login.js"></script>
-    <script src="/js/controllers/component.js"></script>
-    <script src="/js/controllers/builder.js"></script>
+    <script src="<?=baseUrl("js/controllers/main.js")?>"></script>
+    <script src="<?=baseUrl("js/controllers/head.js")?>"></script>
+    <script src="<?=baseUrl("js/controllers/registration.js")?>"></script>
+    <script src="<?=baseUrl("js/controllers/login.js")?>"></script>
+    <script src="<?=baseUrl("js/controllers/component.js")?>"></script>
+    <script src="<?=baseUrl("js/controllers/builder.js")?>"></script>
 
-    <script src="/js/controllers/test.js"></script>
+    <script src="<?=baseUrl("js/controllers/test.js")?>"></script>
 
 </section>
 </html>
