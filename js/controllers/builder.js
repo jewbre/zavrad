@@ -130,15 +130,12 @@ app.controller("builderController", function($scope, $http, $timeout, $compile){
 
     $scope.delete = function(elemName) {
         $("#"+elemName).remove();
-        console.log(elemName);
         var newArray = [];
         for(k in $scope.models) {
-            console.log(elemName + "," + k);
             if(k == elemName) continue;
             newArray[k] = $scope.models[k];
         }
         $scope.models = newArray;
-        console.log($scope.models);
         $scope.checkCollisions();
     }
 
