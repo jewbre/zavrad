@@ -93,6 +93,7 @@ app.controller("componentsController", function($scope, $http){
      * Save form model to the database. If there are some errors, display them and disregard saving.
      */
     $scope.save = function(){
+        $scope.saving = true;
         $http({
             url: "/admin/components/save",
             method: "JSON",
@@ -111,6 +112,7 @@ app.controller("componentsController", function($scope, $http){
             } else {
                 console.log("something went wrong, fix this");
             }
+            $scope.saving = false;
         })
     };
 
@@ -118,6 +120,7 @@ app.controller("componentsController", function($scope, $http){
      * Update form model. Same functionality as save.
      */
     $scope.update = function(){
+        $scope.saving = true;
         $http({
             url: "/admin/components/update",
             method: "JSON",
@@ -137,6 +140,7 @@ app.controller("componentsController", function($scope, $http){
             } else {
                 console.log("something went wrong, fix this");
             }
+            $scope.saving = false;
         })
     };
 
@@ -146,6 +150,7 @@ app.controller("componentsController", function($scope, $http){
      */
     $scope.delete = function(elem) {
         if(confirm("Are you sure?")) {
+            $scope.deleting = true;
             $http({
                 url: "/admin/components/delete",
                 method: "JSON",
@@ -161,6 +166,7 @@ app.controller("componentsController", function($scope, $http){
                 } else {
                     console.log("something went wrong, fix this");
                 }
+                $scope.deleting = false;
             })
         }
     };

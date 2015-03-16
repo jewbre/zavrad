@@ -97,12 +97,14 @@ class VComponents {
 
                         </fieldset>
                         <button type="button" class="confirm-button-green" ng-click="save()" ng-if="!editing">
-                            <i class="fa fa-plus-square-o fa-lg"></i>
+                            <i class="fa fa-spinner fa-lg" ng-if="saving"></i>
+                            <i class="fa fa-plus-square-o fa-lg" ng-if="!saving"></i>
                             <?=t("addLabel")?>
                         </button>
 
                         <button type="button" class="confirm-button-blue" ng-click="update()" ng-if="editing">
-                            <i class="fa fa-check-square-o fa-lg"></i>
+                            <i class="fa fa-spinner fa-lg" ng-if="saving"></i>
+                            <i class="fa fa-plus-square-o fa-lg" ng-if="!saving"></i>
                             <?=t("updateLabel")?>
                         </button>
 
@@ -126,12 +128,16 @@ class VComponents {
                                 <td>{{ component.width }} x {{ component.height }}</td>
                                 <td>{{ component.description }}</td>
                                 <td>
-                                    <span ng-click="edit(this)" class="action-button">
+                                    <span ng-click="edit(this)" class="action-button" ng-if="!deleting">
                                         <i class="fa fa-pencil-square-o fa-lg"></i>
                                     </span>
 
-                                    <span ng-click="delete(this)" class="action-button">
+                                    <span ng-click="delete(this)" class="action-button" ng-if="!deleting">
                                         <i class="fa fa-trash fa-lg"></i>
+                                    </span>
+
+                                    <span class="action-button" ng-if="deleting">
+                                        <i class="fa fa-spinner fa-lg"></i>
                                     </span>
                                 </td>
                             </tr>

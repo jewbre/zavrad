@@ -1,33 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b7511cb-66ae-4d8b-a213-048c18c9b285" name="Default" comment="Component builder fixed and added extra">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/MTemplate.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database.mwb.bak" afterPath="$PROJECT_DIR$/database.mwb.bak" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database.mwb" afterPath="$PROJECT_DIR$/database.mwb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/CComponent.php" afterPath="$PROJECT_DIR$/controller/CComponent.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/CLogin.php" afterPath="$PROJECT_DIR$/controller/CLogin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/CMain.php" afterPath="$PROJECT_DIR$/controller/CMain.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/COptions.php" afterPath="$PROJECT_DIR$/controller/COptions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/CRegistration.php" afterPath="$PROJECT_DIR$/controller/CRegistration.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/MComponent.php" afterPath="$PROJECT_DIR$/model/MComponent.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/MDBConnection.php" afterPath="$PROJECT_DIR$/model/MDBConnection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/MOption.php" afterPath="$PROJECT_DIR$/model/MOption.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/MRegistration.php" afterPath="$PROJECT_DIR$/model/MRegistration.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/MUser.php" afterPath="$PROJECT_DIR$/model/MUser.php" />
+    <list default="true" id="6b7511cb-66ae-4d8b-a213-048c18c9b285" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/VComponents.php" afterPath="$PROJECT_DIR$/view/VComponents.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/VRegistration.php" afterPath="$PROJECT_DIR$/view/VRegistration.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/autoloader.php" afterPath="$PROJECT_DIR$/autoloader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/builder.js" afterPath="$PROJECT_DIR$/js/controllers/builder.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/component.js" afterPath="$PROJECT_DIR$/js/controllers/component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lang/cro.php" afterPath="$PROJECT_DIR$/lang/cro.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lang/en.php" afterPath="$PROJECT_DIR$/lang/en.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/login.js" afterPath="$PROJECT_DIR$/js/controllers/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/main.js" afterPath="$PROJECT_DIR$/js/controllers/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/registration.js" afterPath="$PROJECT_DIR$/js/controllers/registration.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.php" afterPath="$PROJECT_DIR$/test.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="webshop.iws" />
@@ -52,7 +28,18 @@
     <favorites_list name="webshop" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="VComponents.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view/VComponents.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.41535777" vertical-offset="1887" max-vertical-offset="2584">
+              <caret line="130" column="103" selection-start-line="130" selection-start-column="103" selection-end-line="130" selection-end-column="103" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -83,7 +70,6 @@
         <option value="$PROJECT_DIR$/autoloader.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/test.php" />
-        <option value="$PROJECT_DIR$/view/VComponents.php" />
         <option value="$PROJECT_DIR$/lang/en.php" />
         <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/controller/CLogin.php" />
@@ -98,10 +84,11 @@
         <option value="$PROJECT_DIR$/model/MTemplate.php" />
         <option value="$PROJECT_DIR$/model/MUser.php" />
         <option value="$PROJECT_DIR$/js/controllers/builder.js" />
-        <option value="$PROJECT_DIR$/js/controllers/component.js" />
         <option value="$PROJECT_DIR$/js/controllers/login.js" />
         <option value="$PROJECT_DIR$/js/controllers/main.js" />
         <option value="$PROJECT_DIR$/js/controllers/registration.js" />
+        <option value="$PROJECT_DIR$/js/controllers/component.js" />
+        <option value="$PROJECT_DIR$/view/VComponents.php" />
       </list>
     </option>
   </component>
@@ -153,6 +140,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="webshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -304,13 +305,20 @@
       <option name="project" value="LOCAL" />
       <updated>1426389588742</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Component editor refactored. Extra options on components added. Code commented.">
+      <created>1426542306832</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1426542306832</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -326,7 +334,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -350,7 +357,8 @@
     </option>
     <MESSAGE value="Small changes" />
     <MESSAGE value="Server compatibility fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Server compatibility fixes" />
+    <MESSAGE value="Component editor refactored. Extra options on components added. Code commented." />
+    <option name="LAST_COMMIT_MESSAGE" value="Component editor refactored. Extra options on components added. Code commented." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -544,6 +552,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2901024" vertical-offset="0" max-vertical-offset="1003">
           <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="16" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -551,6 +560,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37696335" vertical-offset="396" max-vertical-offset="969">
           <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -566,14 +576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2901024" vertical-offset="204" max-vertical-offset="969">
           <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/VComponents.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6527051" vertical-offset="51" max-vertical-offset="2482">
-          <caret line="30" column="142" selection-start-line="30" selection-start-column="142" selection-end-line="30" selection-end-column="142" />
           <folding />
         </state>
       </provider>
@@ -734,16 +736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.086206" vertical-offset="1010" max-vertical-offset="4522">
-          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#51#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers/head.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
@@ -773,8 +765,26 @@
         <state vertical-scroll-proportion="0.1388889" vertical-offset="0" max-vertical-offset="612">
           <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.77264327" vertical-offset="2404" max-vertical-offset="4624">
+          <caret line="168" column="40" selection-start-line="168" selection-start-column="40" selection-end-line="168" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#51#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/VComponents.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41535777" vertical-offset="1887" max-vertical-offset="2584">
+          <caret line="130" column="103" selection-start-line="130" selection-start-column="103" selection-end-line="130" selection-end-column="103" />
+          <folding />
         </state>
       </provider>
     </entry>
