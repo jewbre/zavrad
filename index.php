@@ -51,6 +51,10 @@ switch($atrs[0]) {
                         $obj = new CComponent();
                         $obj->delete();
                         die();
+                    case "templates" :
+                        $obj = new CComponent();
+                        $obj->getTemplates();
+                        die();
                     default :
                         $view = new VComponents();
                         break;

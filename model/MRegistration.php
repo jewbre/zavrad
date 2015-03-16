@@ -14,6 +14,10 @@ class MRegistration {
         $this->_data = $data;
     }
 
+    /**
+     * Validate registration data.
+     * @return bool
+     */
     public function validate(){
         $valid = true;
 
@@ -59,6 +63,10 @@ class MRegistration {
     }
 
 
+    /**
+     * Register user by saving his data into the database.
+     * @return MUser
+     */
     public function registerUser(){
         $user = new MUser($this->_data->email->value, $this->_data->password->value);
         $user->save();
@@ -70,6 +78,10 @@ class MRegistration {
     }
 
 
+    /**
+     * Retrieve data for registration.
+     * @return mixed
+     */
     public function getData(){
         return $this->_data;
     }

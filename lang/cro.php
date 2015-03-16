@@ -14,6 +14,7 @@ $lang = array(
     "pageExcerptLabel" => "Kratki opis:",
 
     // Registration page
+    "registerLabel" => "Registriraj se",
     "emailLabel" => "E-mail",
     "passwordLabel" => "Lozinka",
     "passwordRepeatLabel" => "Ponovite lozinku",

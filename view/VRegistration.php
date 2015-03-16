@@ -45,7 +45,7 @@ class VRegistration {
                             <div>
                                 <button type="button" class="confirm-button-white" ng-click="register()">
                                     <span class="icon-arrow-right-red"></span>
-                                    Register
+                                    <?=t("registerLabel")?>
                                 </button>
                             </div>
                     </form>

@@ -8,6 +8,11 @@
 
 class CRegistration extends CMain{
 
+    /**
+     * Register user if possible.
+     *
+     * Invoked at: /registration/register
+     */
     public function register(){
         $data = $this->receiveAjax();
 

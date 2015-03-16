@@ -8,6 +8,10 @@
 
 class MDBConnection {
 
+    /**
+     * Connection to the database. Created using constants for DNS.
+     * @return PDO
+     */
     public static function getConnection(){
         return new PDO("mysql:hostname=" . HOSTNAME . ";dbname=" . DBNAME . ";", DB_USERNAME , DB_PASSWORD );
     }

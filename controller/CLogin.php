@@ -8,6 +8,13 @@
 
 class CLogin extends CMain{
 
+    /**
+     * Logs in user if provided data is correct.
+     *
+     * Invoked at: /login/login
+     *
+     * @throws InvalidIdentificator when provided with invalid id type. Valid id types are email address and id of the user.
+     */
     public function login(){
         $params = $this->receiveAjax();
         $user = MUser::get($params->data->email->value);
@@ -47,14 +54,26 @@ class CLogin extends CMain{
     }
 
 
+    /**
+     * Save successful login to client.
+     * @param $user
+     */
     public static function registerLogin($user){
         $_SESSION["web-user"] = json_encode($user);
     }
 
+    /**
+     * Check if there is a logged in user.
+     * @return bool
+     */
     public static function isLoggedIn(){
         return !empty($_SESSION["web-user"]);
     }
 
+    /**
+     * Retrieve logged in user, if such exists, or null.
+     * @return MUser|null
+     */
     public static function getLoggedIn(){
         if(CLogin::isLoggedIn()) {
             return json_decode($_SESSION["web-user"]);

@@ -10,6 +10,11 @@ class COptions {
 
     public $options = array();
 
+    // todo: finish this class
+
+    /**
+     * Retrieve all options from database.
+     */
     public function get(){
         MOption::getAll();
     }

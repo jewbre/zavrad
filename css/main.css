@@ -88,7 +88,11 @@ section[class="main-options"] .form-text-input label{
     width:50px!important;
 }
 
-input[type="text"], .text-box, .small-text-box{
+.middle-text-box {
+    width:100px!important;
+}
+
+input[type="text"], .text-box, .small-text-box, select{
     width:200px;
     display:inline-block;
     vertical-align: top;
@@ -102,7 +106,7 @@ input[type="text"], .text-box, .small-text-box{
     resize: none;
 }
 
-input[type="text"]:focus, .text-box:focus, .small-text-box:focus {
+input[type="text"]:focus, .text-box:focus, .small-text-box:focus, select:focus{
     border:1px solid rgba(20, 29, 150, 0.5);
     -webkit-box-shadow: 0 0 3px rgba(20, 29, 150, 0.5);
     -moz-box-shadow: 0 0 3px rgba(20, 29, 150, 0.5);
@@ -130,6 +134,13 @@ input[type="text"]:focus, .text-box:focus, .small-text-box:focus {
     box-shadow: 0 0 3px rgba(211, 25, 22, 0.50)!important;
 }
 
+
+.color-box-small {
+    display: inline-block;
+    height: 26px;
+    width: 40px;
+    vertical-align: middle;
+}
 
 /*Options additional settings*/
 .form-text-input textarea {
@@ -451,6 +462,29 @@ button {
     border:3px solid rgba(223, 35, 28, 1)!important;
 }
 
+.close-icon, .add-icon {
+    display:inline-block;
+    vertical-align: middle;
+    opacity: 0.5;
+    color:#000;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.close-icon:hover {
+    opacity: 1;
+    color: #DF231C;
+}
+
+.add-icon:hover {
+    opacity: 1;
+    color: rgba(21, 188, 36, 1);
+}
+
+.inline-label {
+    display:inline-block!important;
+    vertical-align: middle!important;
+}
 
 /* Full grid */
 .grid-rows-1 {

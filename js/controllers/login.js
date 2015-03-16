@@ -2,7 +2,11 @@
  * Created by Vilim Stubičan on 10.3.2015..
  */
 
-app.controller("loginController", function($scope, $http, $timeout){
+app.controller("loginController", function($scope, $http){
+    /**
+     * Form model.
+     * @type {{email: {value: string}, password: {value: string}, error: {value: string, hasError: boolean}}}
+     */
     $scope.data = {
        email : {
            value : ""
@@ -16,6 +20,9 @@ app.controller("loginController", function($scope, $http, $timeout){
        }
     };
 
+    /**
+     * Perform login functionality. If there is some error, display message and disregard login.
+     */
     $scope.login = function(){
         $http({
             url : "/login/login",

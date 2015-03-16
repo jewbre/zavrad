@@ -152,7 +152,7 @@ class MUser {
     }
 
     /**
-     *
+     * Compare user password and provided password.
      * @param $password
      * @return bool
      */
@@ -160,6 +160,13 @@ class MUser {
         return $this->_password == crypt($this->_salt . $this->_email . $password, "$6$" . $this->_salt);
     }
 
+    /**
+     * Validate user and email combination. If there is no user with provided email or email and password combination do not match, returns false.
+     * @param $email
+     * @param $password
+     * @return bool
+     * @throws InvalidIdentificator
+     */
     public static function validateUser($email, $password) {
         $user = MUser::get($email);
         if($user == null) return false;

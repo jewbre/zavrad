@@ -11,11 +11,21 @@ class MOption {
     public $name;
     public $value;
 
+    /**
+     * Constructor of the model.
+     * @param $name
+     * @param $value
+     */
     public function MOption($name, $value) {
         $this->name = $name;
         $this->value = $value;
     }
 
+    /**
+     * Get single option by its name.
+     * @param $optionName
+     * @return bool|MOption
+     */
     public static function get($optionName) {
         $db = MDBConnection::getConnection();
         $sql = $db->prepare("SELECT * FROM options WHERE name = ?");
@@ -26,6 +36,10 @@ class MOption {
         return false;
     }
 
+    /**
+     * Save or update current option. Model automaticly evaluates what will be done.
+     * @return bool success of the operation.
+     */
     public function saveOrUpdate(){
         if(empty($this->name) || empty($this->value)) return false;
 
@@ -41,6 +55,10 @@ class MOption {
         }
     }
 
+    /**
+     * Retrieve all options. Returns false if fails.
+     * @return array|bool
+     */
     public static function getAll(){
         $db = MDBConnection::getConnection();
         $sql = $db->prepare("SELECT * FROM options");

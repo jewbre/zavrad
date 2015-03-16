@@ -14,6 +14,7 @@ $lang = array(
     "pageExcerptLabel" => "Short description:",
 
     // Registration page
+    "registerLabel" => "Register",
     "emailLabel" => "Email",
     "passwordLabel" => "Password",
     "passwordRepeatLabel" => "Repeat password",
@@ -40,12 +41,25 @@ $lang = array(
     "addLabel" => "Add",
     "updateLabel" => "Update",
     "cancelLabel" => "Cancel",
+    "productListingLabel" => "Product listing",
+    "backgroundColorLabel" => "Background color",
+    "textColorLabel" => "Text color",
+    "menuItems" => "Menu items",
+    "menuItemLabel" => "Menu item",
+    "menuLabel" => "Menu",
+    "selectTemplateLabel" => "-- Select template",
 
     // Page rulers
     "windowPageRuler" => "This marks the boundaries of the site. Make sure you're inside of them.",
 
     // Error codes
     "noValueSet" => "No values has been set.",
+    "noMenuItemValue" => "Menu item must have its display value.",
+    "invalidUrl" => "Please enter a valid URL.",
+    "emptyBackgroundColorValue" => "Background color can only be valid hex numbers, e.g. #fff.",
+    "emptyTextColorValue" => "Background color can only be valid hex numbers, e.g. #fff.",
+    "invalidColorValue" => "Invalid color value. Please enter values in standard hex format, e.g. #fff or #abcdeg.",
+    "emptyMenu" => "Menu can not be empty. Please enter some menu items.",
 
     // Validations
     "invalidEmail" => "Invalid email address. Please enter a valid one.",

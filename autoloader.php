@@ -25,6 +25,7 @@ $files = array(
     array("MUser","model","*"),
     array("MRegistration","model",array("registration")),
     // component should be loaded in more cases
+    array("MTemplate","model",array("admin")),
     array("MComponent","model",array("admin")),
 
     // Controllers

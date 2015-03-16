@@ -14,13 +14,16 @@ class MComponent {
     public $height;
     public $description;
 
+    /**
+     * Save model to the database.
+     */
     public function save(){
         $db = MDBConnection::getConnection();
         $sql = $db->prepare("INSERT INTO component(name, template, width, height, description) VALUES(?,?,?,?,?)");
         $sql->execute(
             array(
                 $this->name,
-                $this->template,
+                json_encode($this->template),
                 $this->width,
                 $this->height,
                 $this->description,
@@ -30,6 +33,9 @@ class MComponent {
         $this->id = $db->lastInsertId();
     }
 
+    /**
+     * Update model representation in database.
+     */
     public function update(){
         $db = MDBConnection::getConnection();
         $sql = $db->prepare("
@@ -40,7 +46,7 @@ class MComponent {
         $sql->execute(
             array(
                 $this->name,
-                $this->template,
+                json_encode($this->template),
                 $this->width,
                 $this->height,
                 $this->description,
@@ -49,12 +55,20 @@ class MComponent {
         );
     }
 
+    /**
+     * Delete model from the database.
+     */
     public function delete(){
         $db = MDBConnection::getConnection();
         $sql = $db->prepare("DELETE FROM component WHERE id = ?");
         $sql->execute(array($this->id));
     }
 
+    /**
+     * Retrieve single model from database.
+     * @param $id model identificator
+     * @return MComponent|null model, if exists, otherwise null
+     */
     public static function get($id) {
         $db = MDBConnection::getConnection();
         $sql = $db->prepare("SELECT * FROM component WHERE id = ?");
@@ -66,6 +80,10 @@ class MComponent {
         return null;
     }
 
+    /**
+     * Retrieve all models from database.
+     * @return array of components
+     */
     public static function getComponents() {
         $db = MDBConnection::getConnection();
         $sql = $db->prepare("SELECT * FROM component");
@@ -78,23 +96,38 @@ class MComponent {
         return $data;
     }
 
+    /**
+     * Number of components.
+     * @return int
+     */
     public static function total(){
         $db = MDBConnection::getConnection();
         $sql = $db->prepare("SELECT COUNT(*) as total FROM component");
         $sql->execute();
-        return $sql->fetch(PDO::FETCH_OBJ)->total;
+        return intval($sql->fetch(PDO::FETCH_OBJ)->total);
     }
+
+    /**
+     * Helper function. Creates and populates new component with provided data.
+     * @param $object
+     * @return MComponent
+     */
     private function fillFromDBObject($object) {
         $component = new MComponent();
         $component->id = $object->id;
         $component->name = $object->name;
-        $component->template = $object->template;
+        $component->template = json_decode($object->template);
         $component->width = $object->width;
         $component->height = $object->height;
         $component->description = $object->description;
         return $component;
     }
 
+    /**
+     * Validate provided parameteres received from component editor.
+     * @param $params
+     * @return mixed
+     */
     public static function validate($params) {
         $valid = true;
         if(!empty($params->data->name->value)) {
@@ -116,13 +149,6 @@ class MComponent {
             }
         }
 
-        if(!empty($params->data->template->value)) {
-            $params->data->template->error = "";
-        } else {
-            $params->data->template->error = t("noComponentTemplate");
-            $valid = false;
-        }
-
         $width = intval($params->data->dimensions->width);
         $height = intval($params->data->dimensions->height);
 
@@ -139,6 +165,9 @@ class MComponent {
             $params->data->hasError = true;
         }
 
+        $params->data->template = MTemplate::validate($params->data->template);
+        $params->data->hasError = $params->data->hasError || $params->data->template->hasError;
+        unset($params->data->template->hasError);
 
         return $params;
     }

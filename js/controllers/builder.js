@@ -6,6 +6,9 @@ app.controller("builderController", function($scope, $http, $timeout, $compile){
     $scope.models = [];
     $scope.count = 1;
 
+    /**
+     * Retrieve components from database.
+     */
     $scope.getComponents = function(){
         $http({
             url: "/admin/components/get",
@@ -21,9 +24,13 @@ app.controller("builderController", function($scope, $http, $timeout, $compile){
                 console.log("something went wrong, fix this");
             }
         })
-    }
+    };
     $scope.getComponents();
 
+    /**
+     * Appends new component to the grid of the builder. Attaches listeners to the same object and provides it its functionality.
+     * @param elem
+     */
     $scope.addNewComponent = function(elem) {
         elem = elem.component;
         var objName = "component-"+$scope.count;
@@ -65,6 +72,10 @@ app.controller("builderController", function($scope, $http, $timeout, $compile){
         $scope.checkCollisions();
     };
 
+    /**
+     * Handles drag event. Invoked at the stop of the drag. Updates $scope value of the component and checks for collisions.
+     * @param name
+     */
     $scope.handleDrag = function(name){
         $timeout(function(){
             var elem = $("#"+name);
@@ -78,17 +89,25 @@ app.controller("builderController", function($scope, $http, $timeout, $compile){
         },400);
     };
 
+    /**
+     * Check collisions for all objects on the grid.
+     */
     $scope.checkCollisions = function() {
+        // Remove current collision results
         $(".collision").removeClass("collision");
+
         for(k1 in $scope.models) {
             var main = $scope.models[k1];
             var x1 = parseInt(main.position.x);
             var x2 = x1 + parseInt(main.width);
             var y1 = parseInt(main.position.y);
             var y2 = y1 + parseInt(main.height);
+            // Check for boundaries.
             if(y1 < 0 || x1<0 || x2 > 12 || x1 > 12) {
                 $("#"+main.objName).addClass("collision");
             }
+
+            // Check for collissions between components.
             for(k in $scope.models){
                 if(k == k1) continue;
                 var tmp = $scope.models[k];
@@ -96,8 +115,15 @@ app.controller("builderController", function($scope, $http, $timeout, $compile){
                 var x4 = x3 + parseInt(tmp.width);
                 var y3 = parseInt(tmp.position.y);
                 var y4 = y3 + parseInt(tmp.height);
+
+                // Mathematical check ups. If x1 if left border of the first component and x2 = x1 + component.width and x3 and x4
+                // same values of the second component, then check horizontal collision it is either required that x1 left of the
+                // second component and x2 inside of the same, or that x1 is inside or on the left border of the second component.
+                // Same case is worth for vertical check up.
                 var hCheck = (x1 < x3 && x2 > x3) || (x1 >= x3 && x1 < x4);
                 var vCheck = y1 < y3 && y2 > y3 || y1 >= y3 && y1 < y4;
+
+                // If both collisions happened, then the two components are crossing one over another.
                 if(hCheck && vCheck){
                     $("#"+main.objName).addClass("collision");
                     $("#"+tmp.objName).addClass("collision");
@@ -107,6 +133,10 @@ app.controller("builderController", function($scope, $http, $timeout, $compile){
         }
     };
 
+    /**
+     * Slider function. Slides components list in provided direction.
+     * @param direction "left"|"right"
+     */
     $scope.listModels = function(direction) {
         var elem = $("div[data-id='wrapper']");
         var parentEl = elem.parent();
@@ -126,8 +156,12 @@ app.controller("builderController", function($scope, $http, $timeout, $compile){
             }
         }
         elem.css("margin-left",margin+"px");
-    }
+    };
 
+    /**
+     * Remove component element from the grid. Recheck collisions after removal.
+     * @param elemName
+     */
     $scope.delete = function(elemName) {
         $("#"+elemName).remove();
         var newArray = [];

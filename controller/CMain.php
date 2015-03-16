@@ -8,6 +8,10 @@
 
 class CMain extends MJsonOutput{
 
+    /**
+     * Receive AngularJS JSON ajax requests data.
+     * @return mixed
+     */
     public function receiveAjax(){
         return json_decode(file_get_contents("php://input"));
     }
