@@ -34,6 +34,8 @@ $lang = array(
     "componentDescription" => "Description",
 
     // Labels
+    "IDLabel" => "ID",
+    "authorityLabel" => "Authority",
     "nameLabel" => "Name",
     "templateLabel" => "Template",
     "dimensionsLabel" => "Dimensions",
@@ -47,6 +49,9 @@ $lang = array(
     "menuItems" => "Menu items",
     "menuItemLabel" => "Menu item",
     "menuLabel" => "Menu",
+    "saveLabel" => "Save",
+    "resetLabel" => "Reset",
+    "designNameLabel" => "Design name",
     "selectTemplateLabel" => "-- Select template",
 
     // Page rulers
@@ -63,6 +68,7 @@ $lang = array(
 
     // Validations
     "invalidEmail" => "Invalid email address. Please enter a valid one.",
+    "duplicateEmail" => "User with that email already exists",
     "invalidPasswordLength" => "Passwords must be at least 3 character and not over 20 characters.",
     "unequalPasswords" => "Passwords do not match.",
     "noComponentName" => "Please enter component name.",

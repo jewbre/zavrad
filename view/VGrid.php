@@ -49,6 +49,25 @@ class VGrid {
                     </span>
                 </div>
             </div>
+
+            <div class="builder-action-buttons">
+                <div class="design-list">
+                    <div class="single-design-item" ng-repeat="design in designs">
+                        <div class="single-design-item-name">
+                            {{ design.name }}
+                        </div>
+                        <div class="single-design-item-actions">
+                            <i class="fa fa-pencil-square-o fa-lg" ng-click="load(design)"></i>
+                            <i class="fa fa-times fa-lg" ng-click="deleteDesign(design)"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-text-input">
+                    <input type="text" name="design-name" id="design-name" class="text-box" placeholder="<?=t("designNameLabel")?>" ng-model="designName"/>
+                </div>
+                <button class="confirm-button-green" ng-click="save()" ng-disabled="count <= 1"><?=t("saveLabel");?></button>
+                <button class="cancel-button-red" ng-click="reset()"><?=t("resetLabel");?></button>
+            </div>
         </section>
         <?php
     }

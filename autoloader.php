@@ -27,6 +27,7 @@ $files = array(
     // component should be loaded in more cases
     array("MTemplate","model",array("admin")),
     array("MComponent","model",array("admin")),
+    array("MDesign","model","*"),
 
     // Controllers
     array("CMain","controller","*"),
@@ -34,6 +35,8 @@ $files = array(
     array("CRegistration","controller",array("registration")),
     array("CLogin","controller","*"),
     array("CComponent","controller",array("admin")),
+    array("CUser","controller","*"),
+    array("CDesign","controller","*"),
 
     // Views
     array("VOptions","view",array("admin")),
@@ -41,6 +44,7 @@ $files = array(
     array("VLogin","view",array("login")),
     array("VComponents","view",array("admin")),
     array("VGrid","view",array("admin")),
+    array("VUsers","view",array("admin")),
     array("VTest","view","*"),
 
     // Exceptions

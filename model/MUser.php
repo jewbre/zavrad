@@ -58,7 +58,7 @@ class MUser {
      */
     public function changePassword($password){
         $this->_salt = uniqid();
-        $this->_password = crypt("$6$" . $this->_salt . $this->_email . $password);
+        $this->_password = crypt($this->_salt . $this->_email . $password, "$6$" . $this->_salt);
     }
 
     /**
@@ -71,6 +71,12 @@ class MUser {
         return $sql->execute(array(
             $this->_password, $this->_salt, $this->_authority, $this->_id
         ));
+    }
+
+    public function delete(){
+        $db = MDBConnection::getConnection();
+        $sql = $db->prepare("DELETE FROM user WHERE id = ?");
+        $sql->execute(array($this->_id));
     }
 
     /**

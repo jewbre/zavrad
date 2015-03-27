@@ -23,6 +23,9 @@ $atrs = explode("/", $route);
 $atrs[1] = (isset($atrs[1]) ? $atrs[1] : "");
 $atrs[2] = (isset($atrs[2]) ? $atrs[2] : "");
 
+
+include_once "header.php";
+include_once "footer.php";
 include_once "autoloader.php";
 
 
@@ -60,8 +63,54 @@ switch($atrs[0]) {
                         break;
                 }
                 break;
+            case "users":
+                switch($atrs[2]) {
+                    case "get":
+                        $obj = new CUser();
+                        $obj->listUsers();
+                        die();
+                    case "authorities":
+                        $obj = new CUser();
+                        $obj->getAuthorities();
+                        die();
+                    case "add":
+                        $obj = new CUser();
+                        $obj->addNewUser();
+                        die();
+                    case "delete":
+                        $obj = new CUser();
+                        $obj->deleteUser();
+                        die();
+                    case "update":
+                        $obj = new CUser();
+                        $obj->updateUser();
+                        die();
+                    default :
+                        $view = new VUsers();
+                }
+                break;
             case "builder" :
                 $view = new VGrid();
+                break;
+            case "design" :
+                switch($atrs[2]) {
+                    case "save" :
+                        $obj = new CDesign();
+                        $obj->save();
+                        die();
+                    case "update" :
+                        $obj = new CDesign();
+                        $obj->update();
+                        die();
+                    case "delete" :
+                        $obj = new CDesign();
+                        $obj->delete();
+                        die();
+                    case "all" :
+                        $obj = new CDesign();
+                        $obj->getAll();
+                        die();
+                }
                 break;
         }
         break;
@@ -104,9 +153,10 @@ switch($atrs[0]) {
         die();
 }
 
-
-include_once "header.php";
+$header = new Header();
+$header->renderPartial();
 $view->renderPartial();
 $route =  explode('?', $_SERVER['REQUEST_URI'], 2);
 $route = $route[0];
-include_once "footer.php";
+$footer = new Footer();
+$footer->renderPartial(array("route"=> $route));

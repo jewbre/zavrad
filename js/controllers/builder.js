@@ -3,8 +3,10 @@
  */
 
 app.controller("builderController", function($scope, $http, $timeout, $compile){
-    $scope.models = [];
+    $scope.models = {};
     $scope.count = 1;
+    $scope.designName = "";
+    $scope.designId = "";
 
     /**
      * Retrieve components from database.
@@ -164,13 +166,144 @@ app.controller("builderController", function($scope, $http, $timeout, $compile){
      */
     $scope.delete = function(elemName) {
         $("#"+elemName).remove();
-        var newArray = [];
+        var newArray = {};
         for(k in $scope.models) {
             if(k == elemName) continue;
             newArray[k] = $scope.models[k];
         }
         $scope.models = newArray;
         $scope.checkCollisions();
+    };
+
+    $scope.reset = function(){
+        if(confirm("Are you sure?")) {
+            $scope.emptyGrid();
+        }
+    };
+
+
+    $scope.emptyGrid = function(){
+        for(key in $scope.models) {
+            $("#"+$scope.models[key].objName).remove();
+        }
+        $scope.models = {};
+        $scope.count = 1;
+        $scope.designName = "";
+        $scope.designId = "";
+    }
+
+    $scope.save = function (){
+        console.log($scope.models);
+        if($scope.designName == "") {
+            alert("Enter valid design name");
+            $("#design-name").addClass("errorBorder");
+            return;
+        } else {
+            $("#design-name").removeClass("errorBorder");
+        }
+        if($(".collision").length > 0) {
+            alert("You have collisions. Resolve them before saving.");
+            return;
+        }
+
+        var url = "/admin/design/save";
+        if($scope.designId != "") {
+            url = "/admin/design/update";
+        }
+        $http({
+            url: url,
+            method: "JSON",
+            data : {
+                id : $scope.designId,
+                name : $scope.designName,
+                data : $scope.models
+            },
+            headers: {
+                'Content-Type': "x www form urlencoded"
+            }
+        }).success(function(data){
+            $scope.getDesigns();
+        })
+    }
+
+    $scope.getDesigns = function(){
+        $http({
+            url: "/admin/design/all",
+            method: "JSON",
+            headers: {
+                'Content-Type': "x www form urlencoded"
+            }
+        }).success(function(data){
+            if(data.success){
+                $scope.designs = data.data;
+            } else {
+                console.log("something went wrong, fix this");
+            }
+        })
+    };
+    $scope.getDesigns();
+
+    $scope.deleteDesign = function(elem){
+      if(confirm("Are you sure?")){
+          $http({
+              url: "/admin/design/delete",
+              method: "JSON",
+              data : {
+                  id : elem.id
+              },
+              headers: {
+                  'Content-Type': "x www form urlencoded"
+              }
+          }).success(function(data){
+              $scope.getDesigns();
+          })
+      }
+    };
+    $scope.load = function(elem) {
+        $scope.emptyGrid();
+        $scope.designId = angular.copy(elem.id);
+        $scope.designName = angular.copy(elem.name);
+        var data = angular.copy(elem.data);
+        for(key in data) {
+            var el = angular.copy(data[key]);
+            $scope.addLoadedElem(el);
+            var c = parseInt(key.substr(key.indexOf("-")+1));
+            if(c > $scope.count) $scope.count = c+1;
+        }
+
+    };
+
+    $scope.addLoadedElem = function(el){
+        var obj = '<div class="grid-element grid-rows-'
+            + el.height +
+            ' grid-cols-'
+            + el.width +
+            '" id="'
+            + el.objName +
+            '"><div class="ruler"></div>' +
+            '<div class="delete-model" ng-click="delete(\''+ el.objName +'\')">' +
+            '<i class="fa fa-trash fa-lg"></i>' +
+            '</div>'+el.name+'</div>';
+        $("div[data-id='theGrid']").append($compile(obj)($scope));
+        $scope.models[el.objName] = el;
+
+        var newObj = $("#"+el.objName);
+        newObj.css("top",""+(50+el.position.y*50)+"px");
+        newObj.css("left",""+(250+el.position.x*50)+"px");
+
+        newObj.draggable({
+            scroll: true,
+            grid: [ 50, 50 ],
+            containment: "parent",
+            start: function() {
+                $(".collision").removeClass("collision");
+            },
+            stop: function() {
+                $scope.handleDrag(el.objName);
+            }
+        });
+
+        newObj.css("opacity","1");
     }
 
 });
