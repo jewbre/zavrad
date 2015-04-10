@@ -20,7 +20,7 @@ class MJsonOutput {
 
     /**
      * Sets private variable data to provided value. Success is considered true in this case.
-     * @param $data value to be set
+     * @param $data
      */
     public function setData($data) {
         $this->_data = $data;
@@ -51,22 +51,29 @@ class MJsonOutput {
         $this->_success = false;
     }
 
+    public function setFailure($data) {
+        $this->_data = $data;
+        $this->_success = false;
+    }
+
 
     /**
      * Outputs json object. Will output even if no values have been set.
      */
-    public function output(){
+    public function output($utf8 = false){
         header('Content-Type: application/json');
+        $options = 0;
+        if($utf8) $options = JSON_UNESCAPED_UNICODE;
         if($this->_success === true) {
             echo json_encode(array(
                 "success" => $this->_success,
                 "data" => $this->_data,
-            ));
+            ), $options);
         } else if($this->_success === false){
             echo json_encode(array(
                 "success" => $this->_success,
                 "error" => $this->_data
-            ));
+            ), $options);
         } else {
             echo json_encode( array(
                 "success" => false,
@@ -74,7 +81,7 @@ class MJsonOutput {
                     "errorCode" => 404,
                     "errorDescription" => t("noValueSet"),
                 )
-            ));
+            ), $options);
         }
     }
 }

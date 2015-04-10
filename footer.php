@@ -28,13 +28,20 @@ class Footer{
     <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
     <script src="<?= baseUrl("js/basic/angular.min.js") ?>"></script>
 
+
     <script src="<?= baseUrl("js/controllers/main.js") ?>"></script>
     <script src="<?= baseUrl("js/controllers/head.js") ?>"></script>
+
+    <script src="<?= baseUrl("js/services/imageUpload.js") ?>"></script>
+
     <script src="<?= baseUrl("js/controllers/registration.js") ?>"></script>
     <script src="<?= baseUrl("js/controllers/login.js") ?>"></script>
     <script src="<?= baseUrl("js/controllers/component.js") ?>"></script>
     <script src="<?= baseUrl("js/controllers/builder.js") ?>"></script>
     <script src="<?= baseUrl("js/controllers/usersListingCtrl.js") ?>"></script>
+    <script src="<?= baseUrl("js/controllers/categoryListing.js") ?>"></script>
+    <script src="<?= baseUrl("js/controllers/mediaLibrary.js") ?>"></script>
+    <script src="<?= baseUrl("js/controllers/productsController.js") ?>"></script>
 
     <script src="<?= baseUrl("js/controllers/test.js") ?>"></script>
 

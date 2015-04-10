@@ -112,6 +112,86 @@ switch($atrs[0]) {
                         die();
                 }
                 break;
+            case "category" :
+                switch($atrs[2]) {
+                    case "all" :
+                    $obj = new CCategory();
+                        $obj->all();
+                        die();
+                    case "save" :
+                        $obj = new CCategory();
+                        $obj->save();
+                        die();
+                    case "update" :
+                        $obj = new CCategory();
+                        $obj->update();
+                        die();
+                    case "delete" :
+                        $obj = new CCategory();
+                        $obj->delete();
+                        die();
+                    default : $view = new VCategory();
+                        break;
+                }
+                break;
+            case "status" :
+                switch($atrs[2]) {
+                    case "regular" :
+                        $obj = new CStatus();
+                        $obj->regular();
+                        die();
+                }
+                break;
+            case "image" :
+                switch($atrs[2]) {
+                    case "upload" :
+                        $obj = new CImages();
+                        $obj->upload();
+                        die();
+                    case "get" :
+                        $obj = new CImages();
+                        $obj->get();
+                        die();
+                    case "delete" :
+                        $obj = new CImages();
+                        $obj->delete();
+                        die();
+                }
+                break;
+            case "currency" :
+                switch($atrs[2]){
+                    case "all" :
+                        $obj = new CCurrency();
+                        $obj->all();
+                        die();
+                }
+                break;
+            case "products" :
+                switch($atrs[2]) {
+                    case "all":
+                        $obj = new CProducts();
+                        $obj->all();
+                        die();
+                    case "save":
+                        $obj = new CProducts();
+                        $obj->save();
+                        die();
+                    case "update":
+                        $obj = new CProducts();
+                        $obj->update();
+                        die();
+                    default:
+                        $view = new VProducts();
+                        break;
+                }
+                break;
+            case "media" :
+                switch($atrs[2]) {
+                    case "library" :
+                        $view = new VMediaLibrary();
+                        break;
+                }
+                break;
         }
         break;
 

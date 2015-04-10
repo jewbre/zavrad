@@ -39,7 +39,8 @@ $lang = array(
     "nameLabel" => "Name",
     "templateLabel" => "Template",
     "dimensionsLabel" => "Dimensions",
-    "decriptionLabel" => "Description",
+    "descriptionLabel" => "Description",
+    "excerptLabel" => "Excerpt",
     "addLabel" => "Add",
     "updateLabel" => "Update",
     "cancelLabel" => "Cancel",
@@ -52,7 +53,13 @@ $lang = array(
     "saveLabel" => "Save",
     "resetLabel" => "Reset",
     "designNameLabel" => "Design name",
+    "statusLabel" => "Status",
     "selectTemplateLabel" => "-- Select template",
+    "showMoreLabel" => "Show more",
+    "codeLabel" => "Code",
+    "categoryLabel" => "Category",
+    "selectCurrencyLabel" => "-- Select currency",
+    "priceLabel" => "price",
 
     // Page rulers
     "windowPageRuler" => "This marks the boundaries of the site. Make sure you're inside of them.",
@@ -65,6 +72,10 @@ $lang = array(
     "emptyTextColorValue" => "Background color can only be valid hex numbers, e.g. #fff.",
     "invalidColorValue" => "Invalid color value. Please enter values in standard hex format, e.g. #fff or #abcdeg.",
     "emptyMenu" => "Menu can not be empty. Please enter some menu items.",
+    "productNameExistsError" => "Product with this name already exists.",
+    "invalidPriceAmountError" => "Please enter valid number, ie. 7 or 7.00 .",
+    "selectCurrencyError" => "Please select currency.",
+    "productNameEmptyError" => "Please enter product name",
 
     // Validations
     "invalidEmail" => "Invalid email address. Please enter a valid one.",
@@ -75,4 +86,10 @@ $lang = array(
     "noComponentTemplate" => "Please enter component template.",
     "invalidDimensions" => "Invalid dimensions. Please enter valid integer values.",
     "componentNameAlreadyExists" => "Component with that name already exists",
+
+    // Messages
+    "successfulEdit" => "Successful update.",
+    "unsuccessfulEdit" => "Something went wrong. Try again.",
+    "successfulSave" => "Successful save.",
+    "unsuccessfulSave" => "Something went wrong. Try again.",
 );

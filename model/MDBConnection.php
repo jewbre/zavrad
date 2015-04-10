@@ -13,7 +13,7 @@ class MDBConnection {
      * @return PDO
      */
     public static function getConnection(){
-        return new PDO("mysql:hostname=" . HOSTNAME . ";dbname=" . DBNAME . ";", DB_USERNAME , DB_PASSWORD );
+        return new PDO("mysql:hostname=" . HOSTNAME . ";dbname=" . DBNAME . ";charset=utf8;", DB_USERNAME , DB_PASSWORD );
     }
 
 }

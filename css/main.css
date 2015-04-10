@@ -184,6 +184,261 @@ button {
     cursor: pointer;
 }
 
+/*Products*/
+.add-products .products-form, .add-products .products-images{
+    display:inline-block;
+    padding: 20px;
+    vertical-align: top;
+}
+
+.add-products .products-images {
+    border:3px solid rgba(192, 192, 192, 1);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+    min-width: 300px;
+    width:40%;
+}
+
+.products-image-holder {
+    display:inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height:500px;
+    overflow-y: scroll;
+}
+.products-image{
+    overflow: hidden;
+    position:relative;
+    display:inline-flex;
+    justify-content: space-around;
+    vertical-align: middle;
+    text-align: center;
+    margin:10px;
+    width:100px;
+    height: 75px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    border:2px solid #fff;
+    cursor:pointer;
+}
+
+.products-image img {
+    align-self: center;
+    max-height: 99%;
+    max-width: 99%;
+}
+
+.products-image:hover {
+    border:2px solid #b8b8b8;
+}
+
+
+
+/*Media Library*/
+.media-library-image-holder {
+    display:inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.media-library-image{
+    overflow: hidden;
+    position:relative;
+    display:inline-flex;
+    justify-content: space-around;
+    vertical-align: middle;
+    text-align: center;
+    margin:10px;
+    width:200px;
+    height: 150px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    border:2px solid #fff;
+}
+
+.media-library-image img {
+    align-self: center;
+    max-height: 100%;
+    max-width: 100%;
+    cursor:pointer;
+}
+
+.media-library-image:hover {
+    border:2px solid #e3e3e3;
+}
+
+
+.media-library-image .image-delete {
+    position:absolute;
+    display:inline-block;
+    cursor: pointer;
+    opacity: 0.5;
+    top:-40px;
+    right:10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.media-library-image:hover .image-delete {
+    top:10px;
+}
+
+.media-library-image:hover .image-delete:hover {
+    opacity:1;
+}
+
+
+.show-more {
+    display: block;
+    color:#ff5d5f;
+    text-align: center;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.show-more p {
+    width:40%;
+    min-width: 200px;
+    font-size: 16px;
+    font-weight: 100;
+    display: inline-block;
+    text-align: center;
+    padding: 20px;
+    color: #ff5d5f;
+    border-top:1px solid #ff5d5f;
+    border-bottom:1px solid #ff5d5f;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.show-more:hover {
+    background-color: #f2f2f2;
+}
+
+.show-more:hover p{
+    color: #c63236;
+    border-top:1px solid #c63236;
+    border-bottom:1px solid #c63236;
+}
+
+.gallery {
+    display:none;
+    width:100%;
+    height:100%;
+    position:fixed;
+    text-align: center;
+    top:0px;
+    left:0px;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.exit-area {
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:inline-block;
+    z-index:0;
+    top:0px;
+    left:0px;
+}
+.gallery-holder{
+    display:inline-block;
+}
+.gallery-big {
+    position:relative;
+    display:inline-block;
+    vertical-align: middle;
+    text-align: center;
+    background-color: rgba(243, 243, 243, 0.70);
+    border:5px solid rgba(0,0,0,0.7);
+    padding:20px;
+    min-width:800px;
+    min-height:400px;
+    width:80%;
+    height:70%;
+}
+
+.gallery-ruler {
+    display:inline-block;
+    vertical-align: middle;
+    width:0px;
+    border:none;
+    height:400px;
+}
+.gallery-main-image {
+    display:inline-block;
+    vertical-align: middle;
+    max-width: 700px;
+    max-height: 400px;
+}
+.gallery-controls {
+    text-align: center;
+    position: absolute;
+    height: 100%;
+    width:50px;
+    background: #b1b1b1;
+    opacity: 0.4;
+    transition:all 0.2s ease-in-out;
+    top:0px;
+    z-index: 2;
+}
+
+.gallery-controls:hover {
+    opacity: 1;
+}
+
+.gallery-previous {
+    background: #898989; /* Old browsers */
+    background: -moz-linear-gradient(left,  #898989 0%, #d1d1d1 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#898989), color-stop(100%,#d1d1d1)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  #898989 0%,#d1d1d1 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  #898989 0%,#d1d1d1 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  #898989 0%,#d1d1d1 100%); /* IE10+ */
+    background: linear-gradient(to right,  #898989 0%,#d1d1d1 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#898989', endColorstr='#d1d1d1',GradientType=1 ); /* IE6-9 */
+    left:0px;
+}
+
+.gallery-next {
+    background: #d1d1d1; /* Old browsers */
+    background: -moz-linear-gradient(left,  #d1d1d1 0%, #898989 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#d1d1d1), color-stop(100%,#898989)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  #d1d1d1 0%,#898989 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  #d1d1d1 0%,#898989 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  #d1d1d1 0%,#898989 100%); /* IE10+ */
+    background: linear-gradient(to right,  #d1d1d1 0%,#898989 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1d1d1', endColorstr='#898989',GradientType=1 ); /* IE6-9 */
+    right:0px;
+}
+
+.gallerySelected {
+    border:2px solid rgba(0, 30, 243, 1)!important;
+}
+.gallery-small {
+    display:inline-flex;
+    position:relative;
+    justify-content: space-around;
+    text-align: center;
+    background-color: rgba(243, 243, 243, 0.70);
+    border:5px solid rgba(0,0,0,0.7);
+    padding:20px;
+    min-width:800px;
+    width:80%;
+}
+
+.gallery-small img {
+    display:inline-block;
+    border:2px solid rgba(0, 30, 243, 0);
+    max-height: 100px;
+    max-width: 100px;
+    margin: 0px 10px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
 /*Buttons*/
 .confirm-button-white {
     font-size: 12px;

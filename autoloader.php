@@ -28,6 +28,12 @@ $files = array(
     array("MTemplate","model",array("admin")),
     array("MComponent","model",array("admin")),
     array("MDesign","model","*"),
+    array("MStatus","model","*"),
+    array("MCategory","model","*"),
+    array("MCurrency","model","*"),
+    array("MProduct","model","*"),
+    array("MPrice","model","*"),
+    array("MImage","model","*"),
 
     // Controllers
     array("CMain","controller","*"),
@@ -37,6 +43,11 @@ $files = array(
     array("CComponent","controller",array("admin")),
     array("CUser","controller","*"),
     array("CDesign","controller","*"),
+    array("CCategory","controller","*"),
+    array("CStatus","controller","*"),
+    array("CImages","controller","*"),
+    array("CProducts","controller","*"),
+    array("CCurrency","controller","*"),
 
     // Views
     array("VOptions","view",array("admin")),
@@ -46,6 +57,9 @@ $files = array(
     array("VGrid","view",array("admin")),
     array("VUsers","view",array("admin")),
     array("VTest","view","*"),
+    array("VCategory","view","*"),
+    array("VMediaLibrary","view","*"),
+    array("VProducts","view","*"),
 
     // Exceptions
     array("InvalidIdentificator","exceptions","*"),
