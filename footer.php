@@ -27,6 +27,7 @@ class Footer{
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
     <script src="<?= baseUrl("js/basic/angular.min.js") ?>"></script>
+    <script src="<?= baseUrl("js/basic/common.js")?>"></script>
 
 
     <script src="<?= baseUrl("js/controllers/main.js") ?>"></script>
@@ -42,6 +43,9 @@ class Footer{
     <script src="<?= baseUrl("js/controllers/categoryListing.js") ?>"></script>
     <script src="<?= baseUrl("js/controllers/mediaLibrary.js") ?>"></script>
     <script src="<?= baseUrl("js/controllers/productsController.js") ?>"></script>
+    <script src="<?= baseUrl("js/controllers/storage.js") ?>"></script>
+    <script src="<?= baseUrl("js/controllers/cartService.js") ?>"></script>
+    <script src="<?= baseUrl("js/controllers/pagesListing.js") ?>"></script>
 
     <script src="<?= baseUrl("js/controllers/test.js") ?>"></script>
 

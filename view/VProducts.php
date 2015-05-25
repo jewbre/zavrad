@@ -6,7 +6,7 @@
  * Time: 0:33
  */
 
-class VProducts {
+class VProducts implements IView{
 
     public function renderPartial($data = null) {
         ?>

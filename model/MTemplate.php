@@ -93,6 +93,7 @@ class MTemplate {
             return $data;
         }
         foreach($data as $k => $option) {
+            if($k == "name") continue;
             switch($option->type) {
                 case MTemplate::TYPE_BACKGROUND_COLOR :
                     if(empty($option->value)) {
@@ -153,7 +154,8 @@ class MTemplate {
         $template->id = $data->id;
         $template->name = t($data->name);
         $template->defaultOptions = json_decode($data->defaultOptions);
-        foreach($template->defaultOptions as $option) {
+        foreach($template->defaultOptions as $key => $option) {
+            if($key == "name") continue;
             if(empty($option->name)) {
                 foreach($option as $o) {
                     $o->name = t($o->name);

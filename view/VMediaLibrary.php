@@ -6,9 +6,9 @@
  * Time: 0:28
  */
 
-class VMediaLibrary {
+class VMediaLibrary implements IView{
 
-    public function renderPartial(){
+    public function renderPartial($data = null){
         ?>
 
         <section class="media-library" ng-controller="mediaLibrary">

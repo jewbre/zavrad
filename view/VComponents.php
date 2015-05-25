@@ -6,9 +6,9 @@
  * Time: 23:04
  */
 
-class VComponents {
+class VComponents implements IView{
 
-    public function renderPartial(){
+    public function renderPartial($data = null){
         ?>
         <section class="components-main" ng-controller="componentsController">
             <div>

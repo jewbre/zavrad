@@ -6,9 +6,9 @@
  * Time: 17:45
  */
 
-class VGrid {
+class VGrid implements IView {
 
-    public function renderPartial(){
+    public function renderPartial($data = null){
         ?>
         <section class="grid-main" ng-controller="builderController">
             <div class="component-models-holder">
@@ -64,6 +64,7 @@ class VGrid {
                 </div>
                 <div class="form-text-input">
                     <input type="text" name="design-name" id="design-name" class="text-box" placeholder="<?=t("designNameLabel")?>" ng-model="designName"/>
+                    <select ng-options="page.id as page.name for page in pages" ng-model="designPage"></select>
                 </div>
                 <button class="confirm-button-green" ng-click="save()" ng-disabled="count <= 1"><?=t("saveLabel");?></button>
                 <button class="cancel-button-red" ng-click="reset()"><?=t("resetLabel");?></button>

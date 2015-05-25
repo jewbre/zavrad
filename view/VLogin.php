@@ -6,9 +6,9 @@
  * Time: 20:11
  */
 
-class VLogin {
+class VLogin implements IView{
 
-    public function renderPartial(){
+    public function renderPartial($data = null){
         ?>
             <div ng-controller="loginController">
                 <section class="login-main">

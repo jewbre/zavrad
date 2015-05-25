@@ -10,16 +10,33 @@ class MDesign {
     public $id;
     public $name;
     public $data;
+    public $page;
 
     public function save(){
         $db = MDBConnection::getConnection();
-        $sql = $db->prepare("INSERT INTO design(name, data) VALUES(?,?)");
+        $sql = $db->prepare("INSERT INTO design(name, data, page) VALUES(?,?,?)");
         $sql->execute(
             array(
                 $this->name,
-                json_encode($this->data)
+                json_encode($this->data),
+                $this->page,
             )
         );
+    }
+
+    public static function getByPage($id) {
+        $db = MDBConnection::getConnection();
+        $sql = $db->prepare("SELECT * FROM design WHERE page = ?");
+        $sql->execute(array($id));
+        if($result = $sql->fetch(PDO::FETCH_OBJ)) {
+            $md = new MDesign();
+            $md->id = $result->id;
+            $md->name = $result->name;
+            $md->page = $result->page;
+            $md->data = json_decode($result->data);
+            return $md;
+        }
+        return null;
     }
 
     public static function get($id) {
@@ -30,6 +47,7 @@ class MDesign {
             $md = new MDesign();
             $md->id = $result->id;
             $md->name = $result->name;
+            $md->page = $result->page;
             $md->data = json_decode($result->data);
             return $md;
         }
@@ -46,6 +64,7 @@ class MDesign {
                 $md = new MDesign();
                 $md->id = $result->id;
                 $md->name = $result->name;
+                $md->page = $result->page;
                 $md->data = json_decode($result->data);
                 $data[] = $md;
             }
@@ -55,14 +74,19 @@ class MDesign {
 
     public function update(){
         $db = MDBConnection::getConnection();
-        $sql = $db->prepare("UPDATE design SET name = ?, data = ? WHERE id = ?");
+        $sql = $db->prepare("UPDATE design SET name = ?, data = ?, page = ? WHERE id = ?");
         $sql->execute(
             array(
                 $this->name,
                 json_encode($this->data),
-                $this->id
+                $this->page,
+                $this->id,
             )
         );
+    }
+
+    public function getPage(){
+        return MPage::get($this->page);
     }
 
     public function delete(){

@@ -6,7 +6,7 @@
  * Time: 22:11
  */
 
-class VUsers {
+class VUsers implements IView{
 
     public function renderPartial($data = null) {
         ?>

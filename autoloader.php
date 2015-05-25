@@ -6,6 +6,7 @@
  * Time: 18:58
  */
 
+
 /**
  * Autoloades all files. Used for including files when needed.
  * Make sure file name is equal to the actual file name.
@@ -17,6 +18,10 @@
 $files = array(
 //    array(name, path, includeWhen)
 //        "includeWhen" => "*" | array("route1", "route2", "route3")
+    // Interfaces
+    array("IView", "interfaces", "*"),
+    array("ILayout", "interfaces", "*"),
+    array("IComponent", "interfaces", "*"),
 
     // Models
     array("MDBConnection","model","*"),
@@ -34,6 +39,12 @@ $files = array(
     array("MProduct","model","*"),
     array("MPrice","model","*"),
     array("MImage","model","*"),
+    array("MPage","model","*"),
+    array("MStorageCard","model","*"),
+    array("MStorageInOut","model","*"),
+    array("MTypeInOut","model","*"),
+    array("MCart","model","*"),
+    array("MCartItem","model","*"),
 
     // Controllers
     array("CMain","controller","*"),
@@ -48,6 +59,13 @@ $files = array(
     array("CImages","controller","*"),
     array("CProducts","controller","*"),
     array("CCurrency","controller","*"),
+    array("CPages","controller","*"),
+    array("CStorage","controller","*"),
+    array("CCart","controller","*"),
+
+    // Layouts
+    array("VAdminLayout","view/layout",array("admin")),
+    array("VDisplayLayout","view/layout","*"),
 
     // Views
     array("VOptions","view",array("admin")),
@@ -60,9 +78,19 @@ $files = array(
     array("VCategory","view","*"),
     array("VMediaLibrary","view","*"),
     array("VProducts","view","*"),
+    array("VStorage","view","*"),
+    array("VPages","view","*"),
+
+    // Components
+    array("ComponentBasicListing","components","*"),
+
 
     // Exceptions
     array("InvalidIdentificator","exceptions","*"),
+
+    // Factories
+    array("ComponentFactory","factory","*"),
+
 );
 
 include_once "functions.php";
@@ -73,3 +101,7 @@ foreach($files as $file) {
         include_once $file[1] . "/" . $file[0] . ".php";
     }
 }
+
+
+include_once "header.php";
+include_once "footer.php";

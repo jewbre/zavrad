@@ -13,6 +13,7 @@ class CDesign extends CMain{
         $md = new MDesign();
         $md->name = $params->name;
         $md->data = $params->data;
+        $md->page = $params->page;
         $md->save();
     }
 
@@ -22,6 +23,7 @@ class CDesign extends CMain{
         $md->id = $params->id;
         $md->name = $params->name;
         $md->data = $params->data;
+        $md->page = $params->page;
         $md->update();
     }
 

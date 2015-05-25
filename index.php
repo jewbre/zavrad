@@ -23,9 +23,6 @@ $atrs = explode("/", $route);
 $atrs[1] = (isset($atrs[1]) ? $atrs[1] : "");
 $atrs[2] = (isset($atrs[2]) ? $atrs[2] : "");
 
-
-include_once "header.php";
-include_once "footer.php";
 include_once "autoloader.php";
 
 
@@ -185,16 +182,77 @@ switch($atrs[0]) {
                         break;
                 }
                 break;
+            case "storage" :
+                switch($atrs[2]) {
+                    case "cards":
+                        $obj = new CStorage();
+                        $obj->cards();
+                        die();
+                    case "new":
+                        $obj = new CStorage();
+                        $obj->newCard();
+                        die();
+                    case "inouts":
+                        $obj = new CStorage();
+                        $obj->getInOut();
+                        die();
+                    default :
+                        $view = new VStorage();
+                        break;
+                }
+                break;
             case "media" :
                 switch($atrs[2]) {
                     case "library" :
+                    default:
                         $view = new VMediaLibrary();
                         break;
                 }
                 break;
+            case "pages" :
+                switch($atrs[2]) {
+                    case "get" :
+                        $obj = new CPages();
+                        $obj->get();
+                        die();
+                    case "save" :
+                        $obj = new CPages();
+                        $obj->save();
+                        die();
+                    case "update" :
+                        $obj = new CPages();
+                        $obj->update();
+                        die();
+                    case "delete" :
+                        $obj = new CPages();
+                        $obj->delete();
+                        die();
+                    default : $view = new VPages();
+                        break;
+                }
         }
         break;
 
+    case "api" :
+        switch($atrs[1]){
+            case "cart" :
+                switch($atrs[2]){
+                    case "get" :
+                        $obj = new CCart();
+                        $obj->get();
+                        die();
+                    case "add" :
+                        $obj = new CCart();
+                        $obj->add();
+                        die();
+                    case "remove" :
+                        $obj = new CCart();
+                        $obj->remove();
+                        die();
+                }
+                break;
+        }
+        break;
     case "registration" :
         switch($atrs[1]) {
             case "register":
@@ -227,16 +285,35 @@ switch($atrs[0]) {
         $view = new VTest();
         break;
     default :
-//        var_dump("default akcija: ".$route, $atrs);
-//        var_dump(CLogin::getLoggedIn());
-        include_once "index2.html";
-        die();
+        if($page = MPage::getByUrl("/".$route)) {
+            if($design = MDesign::getByPage($page->id)) {
+            } else {
+                $design = MDesign::getByPage(1);
+            }
+        } else {
+            $design = MDesign::getByPage(1);
+        }
+
 }
 
-$header = new Header();
-$header->renderPartial();
-$view->renderPartial();
-$route =  explode('?', $_SERVER['REQUEST_URI'], 2);
-$route = $route[0];
-$footer = new Footer();
-$footer->renderPartial(array("route"=> $route));
+$r =  explode('?', $_SERVER['REQUEST_URI'], 2);
+
+$data = array("route"=> $r);
+if($atrs[0] == "admin") {
+    $layout = new VAdminLayout();
+    $layout->setupLayout($view, $data);
+} else if($page = MPage::getByUrl("/".$route)) {
+    var_dump("unutra layout design");
+    $design = MDesign::getByPage($page->id);
+    $layout = new VDisplayLayout($design);
+    $layout->setupLayout(null, $data);
+} else {
+    var_dump("unutra");
+    $header = new Header();
+    $header->renderPartial();
+    $view->renderPartial();
+    $route =  explode('?', $_SERVER['REQUEST_URI'], 2);
+    $route = $route[0];
+    $footer = new Footer();
+    $footer->renderPartial();
+}

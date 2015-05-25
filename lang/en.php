@@ -60,6 +60,16 @@ $lang = array(
     "categoryLabel" => "Category",
     "selectCurrencyLabel" => "-- Select currency",
     "priceLabel" => "price",
+    "amountLabel" => "Amount",
+    "URLLabel" => "URL",
+    "optionsLabel" => "Options",
+    "usersLabel" => "Users",
+    "builderLabel" => "Builder",
+    "categoriesLabel" => "Categories",
+    "productsLabel" => "Products",
+    "storageLabel" => "Storage",
+    "mediaLibraryLabel" => "Media Library",
+    "pagesLabel" => "Pages",
 
     // Page rulers
     "windowPageRuler" => "This marks the boundaries of the site. Make sure you're inside of them.",

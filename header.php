@@ -6,7 +6,7 @@
  * Time: 18:31
  */
 
-class Header
+class Header implements IView
 {
 
     public function renderPartial($data = null)
@@ -22,6 +22,7 @@ class Header
             <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
             <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
             <link href='<?= baseUrl("css/main.css") ?>' rel='stylesheet' type='text/css'>
+            <link href='<?= baseUrl("css/style.css") ?>' rel='stylesheet' type='text/css'>
         </head>
         <body>
 

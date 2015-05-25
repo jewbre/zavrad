@@ -6,9 +6,9 @@
  * Time: 13:27
  */
 
-class VRegistration {
+class VRegistration implements IView{
 
-    public function renderPartial(){
+    public function renderPartial($data = null){
         ?>
         <div ng-controller="registrationController">
             <section class="registration-main">

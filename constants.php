@@ -9,4 +9,4 @@
 define("HOSTNAME","localhost");
 define("DBNAME","webshop");
 define("DB_USERNAME","root");
-define("DB_PASSWORD","toor");
+define("DB_PASSWORD","");

@@ -2,27 +2,28 @@
 /**
  * Created by PhpStorm.
  * User: Vilim Stubičan
- * Date: 7.4.2015.
- * Time: 23:12
+ * Date: 24.5.2015.
+ * Time: 22:11
  */
 
-class VCategory implements IView{
+class VPages implements IView{
+
 
     public function renderPartial($data = null) {
         ?>
-        <section class="category-list-main" ng-controller="categoryListing">
+        <section class="category-list-main" ng-controller="pagesListing">
             <div class="new-form-add" ng-if="!editing">
                 <div>
                     <form>
                         <fieldset>
                             <div class="form-text-input">
-                                <label for="email"> <?=t("nameLabel");?> </label>
+                                <label for="name"> <?=t("nameLabel");?> </label>
                                 <input type="text" name="name" id="name" class="text-box" ng-model="data.name" />
                             </div>
 
                             <div class="form-text-input">
-                                <label for="authority"> <?=t("statusLabel");?> </label>
-                                <select ng-model="data.status" ng-options="status.id as status.name for status in statuses">
+                                <label for="name"> <?=t("URLLabel");?> </label>
+                                <input type="text" name="name" id="name" class="text-box" ng-model="data.url" />
                                 </select>
                             </div>
 
@@ -46,8 +47,8 @@ class VCategory implements IView{
                             </div>
 
                             <div class="form-text-input">
-                                <label for="authority"> <?=t("statusLabel");?> </label>
-                                <select ng-model="data.status" ng-options="status.id as status.name for status in statuses">
+                                <label for="name"> <?=t("URLLabel");?> </label>
+                                <input type="text" name="name" id="name" class="text-box" ng-model="data.url" />
                                 </select>
                             </div>
 
@@ -77,26 +78,26 @@ class VCategory implements IView{
                         <?=t("nameLabel") ?>
                     </th>
                     <th>
-                        <?=t("statusLabel") ?>
+                        <?=t("URLLabel") ?>
                     </th>
                     <th></th>
                     </thead>
                     <tbody>
-                    <tr ng-repeat="category in categories">
+                    <tr ng-repeat="page in pages">
                         <td>
-                            {{ category.id }}
+                            {{ page.id }}
                         </td>
                         <td>
-                            {{ category.name }}
+                            {{ page.name }}
                         </td>
                         <td>
-                            {{ category.status }} - {{ statusDescription(category.status) }}
+                            {{ page.url }}
                         </td>
                         <td>
 
                             <div>
-                                <i class="fa fa-pencil-square-o fa-lg" ng-click="edit(category)"></i>
-                                <i class="fa fa-times fa-lg" ng-click="delete(category)"></i>
+                                <i class="fa fa-pencil-square-o fa-lg" ng-click="edit(page)"></i>
+                                <i class="fa fa-times fa-lg" ng-click="delete(page)"></i>
                             </div>
                         </td>
                     </tr>
@@ -105,6 +106,6 @@ class VCategory implements IView{
 
             </div>
         </section>
-        <?php
+    <?php
     }
 }

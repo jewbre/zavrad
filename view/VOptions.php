@@ -6,9 +6,9 @@
  * Time: 20:24
  */
 
-class VOptions {
+class VOptions implements IView{
 
-    public function renderPartial(){
+    public function renderPartial($data = null){
         ?>
         <section class="main-options" ng-controller="optionsController">
             <div>

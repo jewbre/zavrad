@@ -29,6 +29,27 @@ app.controller("builderController", function($scope, $http, $timeout, $compile){
     };
     $scope.getComponents();
 
+
+    /**
+     * Retrieve components from database.
+     */
+    $scope.getPages = function(){
+        $http({
+            url: "/admin/pages/get",
+            method: "JSON",
+            headers: {
+                'Content-Type': "x www form urlencoded"
+            }
+        }).success(function(data){
+            if(data.success) {
+                $scope.pages = data.data;
+            } else {
+                console.log("something went wrong, fix this");
+            }
+        })
+    };
+    $scope.getPages();
+
     /**
      * Appends new component to the grid of the builder. Attaches listeners to the same object and provides it its functionality.
      * @param elem
@@ -190,6 +211,7 @@ app.controller("builderController", function($scope, $http, $timeout, $compile){
         $scope.count = 1;
         $scope.designName = "";
         $scope.designId = "";
+        $scope.designPage = "";
     }
 
     $scope.save = function (){
@@ -216,6 +238,7 @@ app.controller("builderController", function($scope, $http, $timeout, $compile){
             data : {
                 id : $scope.designId,
                 name : $scope.designName,
+                page : $scope.designPage,
                 data : $scope.models
             },
             headers: {
@@ -263,6 +286,7 @@ app.controller("builderController", function($scope, $http, $timeout, $compile){
         $scope.emptyGrid();
         $scope.designId = angular.copy(elem.id);
         $scope.designName = angular.copy(elem.name);
+        $scope.designPage = angular.copy(elem.page);
         var data = angular.copy(elem.data);
         for(key in data) {
             var el = angular.copy(data[key]);
