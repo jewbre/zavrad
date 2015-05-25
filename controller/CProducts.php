@@ -10,7 +10,9 @@ class CProducts extends CMain{
 
     public function all(){
         $params = $this->receiveAjax();
-        $this->setData(MProduct::getAll(!empty($params->allData)));
+        $page = isset($params->page) ? $params->page : 1;
+        $per_page = isset($params->per_page) ? $params->per_page : 100;
+        $this->setData(MProduct::getAll(!empty($params->allData), $page, $per_page));
         $this->output();
     }
 

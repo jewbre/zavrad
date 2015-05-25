@@ -98,7 +98,7 @@ app.service("storageService",["$http", function($http){
                 url: "/admin/storage/inouts",
                 method: "JSON",
                 data: {
-                    id : id,
+                    id : id
                 },
                 headers: {
                     'Content-Type': "x www form urlencoded"

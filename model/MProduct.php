@@ -27,7 +27,7 @@ class MProduct {
 
     public static function getAll($allData = false, $page = 1, $per_page = 10) {
         $db = MDBConnection::getConnection();
-        $sql = $db->prepare("SELECT * FROM product WHERE NOT status = ?");
+        $sql = $db->prepare("SELECT * FROM product WHERE NOT status = ? LIMIT " . ( ($page-1)*$per_page ). ", " . $per_page);
         $sql->execute(array(MStatus::DELETED));
         if($results = $sql->fetchAll(PDO::FETCH_OBJ)){
             $data = array();

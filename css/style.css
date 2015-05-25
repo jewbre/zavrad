@@ -1,6 +1,7 @@
 .component {
     position:absolute;
     display:inline-block;
+    overflow: hidden;
 }
 
 .c-width-1 {

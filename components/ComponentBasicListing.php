@@ -43,7 +43,8 @@ class ComponentBasicListing implements IComponent{
         c-width-<?=$this->data["c-width"]?>
         c-height-<?=$this->data["c-height"]?>
         c-position-x<?=$this->data["c-position-x"]?>
-        c-position-y<?=$this->data["c-position-y"]?>">
+        c-position-y<?=$this->data["c-position-y"]?>"
+            ng-controller="basicListingCtrl">
         <?php
             $this->renderComponent();
         ?>
@@ -67,7 +68,7 @@ class ComponentBasicListing implements IComponent{
     public function renderComponent()
     {
         ?>
-            <div class="flip-container product-basic" ng-repeat="product in pagedProducts()">
+            <div class="flip-container product-basic" ng-repeat="product in products">
                 <div class="flipper">
                     <div class="front" ng-style="{'background-image':'url('+product.images[0].url+')'}">
                         <div class="main-description">

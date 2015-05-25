@@ -11,6 +11,7 @@ class MTemplate {
     const TYPE_BACKGROUND_COLOR = "backgroundColor";
     const TYPE_TEXT_COLOR = "textColor";
     const TYPE_MENU_ITEMS = "menuItems";
+    const TYPE_SLIDER = "sliderImages";
 
     public $id;
     public $name;

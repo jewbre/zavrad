@@ -30,10 +30,14 @@ class Footer{
     <script src="<?= baseUrl("js/basic/common.js")?>"></script>
 
 
+
     <script src="<?= baseUrl("js/controllers/main.js") ?>"></script>
     <script src="<?= baseUrl("js/controllers/head.js") ?>"></script>
 
     <script src="<?= baseUrl("js/services/imageUpload.js") ?>"></script>
+    <script src="<?= baseUrl("js/controllers/cartService.js") ?>"></script>
+    <script src="<?= baseUrl("js/services/productListingService.js") ?>"></script>
+    <script src="<?= baseUrl("js/services/imagesService.js") ?>"></script>
 
     <script src="<?= baseUrl("js/controllers/registration.js") ?>"></script>
     <script src="<?= baseUrl("js/controllers/login.js") ?>"></script>
@@ -44,10 +48,14 @@ class Footer{
     <script src="<?= baseUrl("js/controllers/mediaLibrary.js") ?>"></script>
     <script src="<?= baseUrl("js/controllers/productsController.js") ?>"></script>
     <script src="<?= baseUrl("js/controllers/storage.js") ?>"></script>
-    <script src="<?= baseUrl("js/controllers/cartService.js") ?>"></script>
     <script src="<?= baseUrl("js/controllers/pagesListing.js") ?>"></script>
 
     <script src="<?= baseUrl("js/controllers/test.js") ?>"></script>
+
+<!--    Components scripts-->
+    <script src="<?= baseUrl("js/components/basicListingCtrl.js") ?>"></script>
+    <script src="<?= baseUrl("js/components/sliderCtrl.js") ?>"></script>
+
 
 </section>
 </html>

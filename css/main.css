@@ -276,6 +276,48 @@ button {
     border:2px solid #e3e3e3;
 }
 
+.component-library-image{
+    overflow: hidden;
+    position:relative;
+    display:inline-flex;
+    justify-content: space-around;
+    vertical-align: middle;
+    text-align: center;
+    margin:10px;
+    width:75px;
+    height: 50px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    border:2px solid #fff;
+}
+
+.slider-image-preview {
+    display:inline-block;
+    vertical-align: middle;
+    margin:10px;
+    max-height: 50px;
+    max-width: 50px;
+}
+
+.slider-image-action {
+    display:inline-block;
+    vertical-align: middle;
+    margin:2px;
+}
+
+.component-library-image img {
+    align-self: center;
+    max-height: 100%;
+    max-width: 100%;
+    cursor:pointer;
+}
+
+.component-library-image:hover {
+    border:2px solid #e3e3e3;
+}
+
+
 
 .media-library-image .image-delete {
     position:absolute;

@@ -83,6 +83,7 @@ $files = array(
 
     // Components
     array("ComponentBasicListing","components","*"),
+    array("ComponentSlider","components","*"),
 
 
     // Exceptions

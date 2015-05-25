@@ -230,6 +230,9 @@ switch($atrs[0]) {
                     default : $view = new VPages();
                         break;
                 }
+                break;
+            default: $view = new VOptions();
+                break;
         }
         break;
 
@@ -291,7 +294,8 @@ switch($atrs[0]) {
                 $design = MDesign::getByPage(1);
             }
         } else {
-            $design = MDesign::getByPage(1);
+            var_dump("tu sam");
+            die();
         }
 
 }
@@ -303,12 +307,10 @@ if($atrs[0] == "admin") {
     $layout = new VAdminLayout();
     $layout->setupLayout($view, $data);
 } else if($page = MPage::getByUrl("/".$route)) {
-    var_dump("unutra layout design");
     $design = MDesign::getByPage($page->id);
     $layout = new VDisplayLayout($design);
     $layout->setupLayout(null, $data);
 } else {
-    var_dump("unutra");
     $header = new Header();
     $header->renderPartial();
     $view->renderPartial();

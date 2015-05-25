@@ -95,6 +95,28 @@ class VComponents implements IView{
                                 </div>
                             </div>
 
+                            <div class="form-text-input" ng-if="hasOption('sliderImages')">
+                                <div ng-repeat="sliderImage in component.template.sliderImages.images track by $index">
+                                    <div class="slider-image-action" ng-click="removeSliderImage($index)">
+                                        <i class="fa fa-times fa-lg"></i>
+                                    </div>
+                                    <div class="slider-image-action green-text" ng-click="moveSliderImageUp($index)">
+                                        <i class="fa fa-caret-square-o-up fa-lg"></i>
+                                    </div>
+                                    <div class="slider-image-action red-text" ng-click="moveSliderImageDown($index)">
+                                        <i class="fa fa-caret-square-o-down fa-lg"></i>
+                                    </div>
+                                    <img ng-src="<?=baseUrl("")?>{{sliderImage.url}}" class="slider-image-preview" />
+
+                                </div>
+                                <div class="components-image-holder">
+                                    <div ng-repeat="image in images" class="component-library-image" >
+                                        <img ng-src="{{'/'+image.url}}"  ng-click="addSliderImage(image.url)"/>
+                                    </div>
+                                    <div class="show-more" ng-click="getMoreImages()">
+                                </div>
+                            </div>
+
                         </fieldset>
                         <button type="button" class="confirm-button-green" ng-click="save()" ng-if="!editing">
                             <i class="fa fa-spinner fa-lg" ng-if="saving"></i>

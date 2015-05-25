@@ -70,6 +70,7 @@ $lang = array(
     "storageLabel" => "Storage",
     "mediaLibraryLabel" => "Media Library",
     "pagesLabel" => "Pages",
+    "sliderLabel" => "Slider",
 
     // Page rulers
     "windowPageRuler" => "This marks the boundaries of the site. Make sure you're inside of them.",
