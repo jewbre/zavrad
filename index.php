@@ -177,6 +177,10 @@ switch($atrs[0]) {
                         $obj = new CProducts();
                         $obj->update();
                         die();
+                    case "get":
+                        $obj = new CProducts();
+                        $obj->get();
+                        die();
                     default:
                         $view = new VProducts();
                         break;
@@ -279,7 +283,20 @@ switch($atrs[0]) {
                 break;
         }
         break;
-
+    case "options" :
+        switch($atrs[1]){
+            case "get":
+                $obj = new COptions();
+                $obj->get();
+                die();
+                break;
+            case "save":
+                $obj = new COptions();
+                $obj->save();
+                die();
+                break;
+        };
+        break;
 
 
 
@@ -293,19 +310,21 @@ switch($atrs[0]) {
             } else {
                 $design = MDesign::getByPage(1);
             }
-        } else {
-            var_dump("tu sam");
-            die();
         }
 
 }
 
 $r =  explode('?', $_SERVER['REQUEST_URI'], 2);
+$data = array("route"=> $r, "routeElements" => explode("/", $r[0]));
 
-$data = array("route"=> $r);
 if($atrs[0] == "admin") {
     $layout = new VAdminLayout();
     $layout->setupLayout($view, $data);
+} else if(intval($atrs[1])){
+        $page = MPage::getByUrl("/".$atrs[0]."/{id}");
+        $design = MDesign::getByPage($page->id);
+        $layout = new VDisplayLayout($design);
+        $layout->setupLayout(null, $data);
 } else if($page = MPage::getByUrl("/".$route)) {
     $design = MDesign::getByPage($page->id);
     $layout = new VDisplayLayout($design);

@@ -35,7 +35,7 @@ class VDisplayLayout implements ILayout{
        ?>
             <div class="component-container">
 
-                <?php $this->generatePlayground(); ?>
+                <?php $this->generatePlayground($data); ?>
 
             </div>
         <?php
@@ -58,12 +58,12 @@ class VDisplayLayout implements ILayout{
         $this->header = new Header();
     }
 
-    private function generatePlayground(){
+    private function generatePlayground($externalData = null){
 
         $componentFactory = new ComponentFactory();
 
         foreach($this->design->data as $name => $data){
-            $comp = $componentFactory->generate($data);
+            $comp = $componentFactory->generate($data, $externalData);
 
             if($comp){
                 $comp->render();

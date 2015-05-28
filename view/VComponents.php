@@ -85,8 +85,10 @@ class VComponents implements IView{
                                 </div>
                                 <div ng-repeat="menuItem in component.template.menuItems.items">
                                     <input type="text" name="menuItemValue" id="menuItemValue" class="middle-text-box" ng-model="menuItem.value" />
-                                    <input type="text" name="menuItemUrl" id="menuItemUrl" class="text-box" ng-model="menuItem.url" />
-                                    <span class="close-icon" ng-click="menuItemRemove(this)">
+                                    <select ng-model="menuItem.url" ng-options="page.url as page.name for page in pages">
+                                        <option value="" disabled><?=t("selectTemplateLabel")?></option>
+                                    </select>
+                                    <span class="close-icon" ng-click="menuItemRemove(menuItem.id)">
                                         <i class="fa fa-times fa-lg"></i>
                                     </span>
                                     <div class="inputError">

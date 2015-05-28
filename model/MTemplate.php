@@ -130,7 +130,7 @@ class MTemplate {
                         if(empty($item->value)) {
                             $item->error = t("noMenuItemValue");
                             $valid = false;
-                        } else if(!filter_var($item->url, FILTER_VALIDATE_URL)) {
+                        } else if($item->url == "") {
                             $item->error = t("invalidUrl");
                             $valid = false;
                         } else {

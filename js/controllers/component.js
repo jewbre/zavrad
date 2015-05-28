@@ -99,6 +99,26 @@ app.controller("componentsController", ["$scope", "$http", "imagesService",
 
 
         /**
+         * Retrieve components from db.
+         */
+        $scope.getPages = function(){
+            $http({
+                url: "/admin/pages/get",
+                method: "JSON",
+                headers: {
+                    'Content-Type': "x www form urlencoded"
+                }
+            }).success(function(data){
+                if(data.success) {
+                    $scope.pages = data.data;
+                } else {
+                    console.log("something went wrong, fix this");
+                }
+            })
+        };
+        $scope.getPages();
+
+        /**
          * Save form model to the database. If there are some errors, display them and disregard saving.
          */
         $scope.save = function(){
@@ -227,10 +247,10 @@ app.controller("componentsController", ["$scope", "$http", "imagesService",
          * Remove menu item from the form model.
          * @param elem
          */
-        $scope.menuItemRemove = function(elem) {
+        $scope.menuItemRemove = function(elemId) {
             var newArray = [];
             for(k in $scope.component.template.menuItems.items) {
-                if($scope.component.template.menuItems.items[k].id == elem.menuItem.id) {
+                if($scope.component.template.menuItems.items[k].id == elemId) {
                     continue;
                 }
                 newArray.push($scope.component.template.menuItems.items[k]);

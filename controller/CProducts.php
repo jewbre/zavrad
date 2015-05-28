@@ -137,4 +137,15 @@ class CProducts extends CMain{
         $this->setData("success");
         $this->output();
     }
+
+
+    public function get()
+    {
+        $params = $this->receiveAjax();
+        $product = MProduct::get($params->product_id);
+        $product->loadEverything();
+        $this->setData($product);
+
+        $this->output();
+    }
 }

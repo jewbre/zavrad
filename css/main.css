@@ -34,11 +34,12 @@ section[class="main-options"] {
 }
 
 /*Input fields and their divs*/
-section[class="main-options"] .form-text-input {
+.main-options .form-text-input {
     display:block;
-    margin:0px;
+    margin:10px 0px;
     padding:5px;
 }
+
 
 /*Labels for inputs*/
 section[class="main-options"] .form-text-input label{
@@ -148,6 +149,7 @@ input[type="text"]:focus, .text-box:focus, .small-text-box:focus, select:focus{
     height: 26px;
     width: 40px;
     vertical-align: middle;
+    border:1px solid #b5b5b5;
 }
 
 /*Options additional settings*/
@@ -184,12 +186,46 @@ hr {
     margin-bottom: 5px;
 }
 
+.checkbox-label {
+    display:inline-block!important;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.checkbox {
+    height:20px;
+    width:20px;
+    border-radius: 3px;
+    display:inline-block;
+    vertical-align: middle;
+}
+
 section[class="registration-main"] .form-text-input {
     margin-bottom: 10px;
 }
 
 button {
     cursor: pointer;
+}
+
+.cart-button {
+    padding:10px;
+    border-radius: 10px;
+    border:none;
+    font-size: 20px;
+    color:#fff;
+    background-color: rgba(53, 84, 255, 0.5);
+
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.cart-button:hover {
+    background-color: rgba(53, 84, 255, 1);
+
 }
 
 /*Products*/
@@ -596,6 +632,7 @@ button {
     box-shadow: 0px 0px 25px #000;
     background-color: rgba(179, 179, 179, 0.60);
     padding:15px;
+    width:200px;
 }
 
 .builder-action-buttons:hover {
@@ -1662,7 +1699,7 @@ button {
         margin-left:150px;
         padding: 10px 0px 100px 10px;
         top:0px;
-        width:100%;
+        width:90%;
         border-left: 2px solid #7b7b7b;
     }
 

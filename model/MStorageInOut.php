@@ -73,6 +73,7 @@ class MStorageInOut {
         }
     }
 
+
     public function saveIn(){
         $this->type = MTypeInOut::getByType(MTypeInOut::TYPE_IN);
         $this->save();

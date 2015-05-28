@@ -38,6 +38,7 @@ class Footer{
     <script src="<?= baseUrl("js/controllers/cartService.js") ?>"></script>
     <script src="<?= baseUrl("js/services/productListingService.js") ?>"></script>
     <script src="<?= baseUrl("js/services/imagesService.js") ?>"></script>
+    <script src="<?= baseUrl("js/services/singleProductService.js") ?>"></script>
 
     <script src="<?= baseUrl("js/controllers/registration.js") ?>"></script>
     <script src="<?= baseUrl("js/controllers/login.js") ?>"></script>
@@ -49,12 +50,14 @@ class Footer{
     <script src="<?= baseUrl("js/controllers/productsController.js") ?>"></script>
     <script src="<?= baseUrl("js/controllers/storage.js") ?>"></script>
     <script src="<?= baseUrl("js/controllers/pagesListing.js") ?>"></script>
+    <script src="<?= baseUrl("js/controllers/options.js") ?>"></script>
 
     <script src="<?= baseUrl("js/controllers/test.js") ?>"></script>
 
 <!--    Components scripts-->
     <script src="<?= baseUrl("js/components/basicListingCtrl.js") ?>"></script>
     <script src="<?= baseUrl("js/components/sliderCtrl.js") ?>"></script>
+    <script src="<?= baseUrl("js/components/singleModernCtrl.js") ?>"></script>
 
 
 </section>

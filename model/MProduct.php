@@ -201,6 +201,30 @@ class MProduct {
         }
     }
 
+    public function getVariatedImages(){
+        $db = MDBConnection::getConnection();
+        $sql = $db->prepare("SELECT * FROM product_image WHERE product_id = ?");
+        $sql->execute(array($this->id));
+        if($results = $sql->fetchAll(PDO::FETCH_OBJ)) {
+            $data = array();
+            foreach($results as $result){
+                $set = array();
+                $set["original"] = MImage::get($result->image_id);
+                $set["400x300"] = MImage::get($result->image_id, 400, 300);
+                $data[] = $set;
+            }
+            return $data;
+        }
+        return array();
+    }
+    public function loadEverything()
+    {
+        $this->price = $this->getPrice();
+        $this->categories = $this->getCategories();
+        $this->amount = MStorageCard::getRemaining($this->id);
+        $this->images = $this->getVariatedImages();
+    }
+
 
     public static function fillFromDBData($data){
         $product = new MProduct();

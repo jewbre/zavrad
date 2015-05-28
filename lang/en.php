@@ -45,6 +45,7 @@ $lang = array(
     "updateLabel" => "Update",
     "cancelLabel" => "Cancel",
     "productListingLabel" => "Product listing",
+    "productListing2Label" => "Modern product listing",
     "backgroundColorLabel" => "Background color",
     "textColorLabel" => "Text color",
     "menuItems" => "Menu items",
@@ -71,6 +72,8 @@ $lang = array(
     "mediaLibraryLabel" => "Media Library",
     "pagesLabel" => "Pages",
     "sliderLabel" => "Slider",
+    "allowBuyingLabel" => "Allow buying on site",
+    "singleModernLabel" => "Single product - modern",
 
     // Page rulers
     "windowPageRuler" => "This marks the boundaries of the site. Make sure you're inside of them.",

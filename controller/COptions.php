@@ -6,7 +6,7 @@
  * Time: 19:14
  */
 
-class COptions {
+class COptions extends CMain{
 
     public $options = array();
 
@@ -16,6 +16,18 @@ class COptions {
      * Retrieve all options from database.
      */
     public function get(){
-        MOption::getAll();
+        $this->setData(MOption::getAll());
+
+        $this->output();
+    }
+
+    public function save()
+    {
+        $params = $this->receiveAjax();
+
+        foreach($params as $name => $option){
+            $mo = new MOption($name, $option->value);
+            $mo->saveOrUpdate();
+        }
     }
 }

@@ -25,6 +25,11 @@ class MStorageCard {
         return null;
     }
 
+    /**
+     * @param $id
+     * @param bool $ignoreFull
+     * @return MStorageCard[]
+     */
     public static function getByProductId($id, $ignoreFull = false){
         $db = MDBConnection::getConnection();
         if($ignoreFull) {
@@ -66,6 +71,19 @@ class MStorageCard {
         $sio->saveIn();
     }
 
+    public function doPriceChange(MPrice $old, MPrice $new)
+    {
+        $diff = intval($new->price) - intval($old->price);
+        $mio = new MStorageInOut();
+        $mio->setStorageCard($this);
+        $mio->amount = $diff * $this->remaining();
+        $mio->setPrice($new);
+        $mio->type = MTypeInOut::TYPE_PRICE_CHANGE;
+        $mio->save();
+    }
+
+
+
     public function closeCard(){
         $db = MDBConnection::getConnection();
         $sql = $db->prepare("UPDATE storage_card SET closed = NOW() WHERE id = ?");
@@ -84,14 +102,21 @@ class MStorageCard {
     }
 
     public static function getRemaining($productId){
-        // total remains for product
-        // implement for storage inout to count
-        return 5;
+        $db = MDBConnection::getConnection();
+        $sql = $db->prepare("SELECT SUM(amount) as total FROM storage_inout WHERE storage_card_id IN (SELECT id FROM storage_card WHERE product_id = ?) AND type_id = ?");
+        $sql->execute(array($productId, MTypeInOut::TYPE_IN));
+        $totalIn = $sql->fetch(PDO::FETCH_OBJ)->total;
+
+        $sql->execute(array($productId, MTypeInOut::TYPE_OUT));
+        $totalOut = $sql->fetch(PDO::FETCH_OBJ)->total;
+        return $totalIn - $totalOut;
     }
 
     public function remaining(){
-        // remains for current card
-        return 2;
+        $db = MDBConnection::getConnection();
+        $sql = $db->prepare("SELECT SUM(amount) as total FROM storage_inout WHERE storage_card_id = ? AND type_id = ?");
+        $sql->execute(array($this->id, MTypeInOut::TYPE_OUT));
+        return $this->amount - intval($sql->fetch(PDO::FETCH_OBJ)->total);
     }
 
     public static function removeAmount($productId, $amount) {

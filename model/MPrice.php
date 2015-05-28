@@ -28,6 +28,19 @@ class MPrice {
         return null;
     }
 
+
+    public static function getLastPrice($productId) {
+        $db = MDBConnection::getConnection();
+        $sql = $db->prepare("SELECT * FROM price WHERE product = ? ORDER BY id DESC");
+        $sql->execute(array($productId));
+        if($result = $sql->fetch(PDO::FETCH_OBJ)){
+            $price = MPrice::fillFromDBData($result);
+            $price->currency = $price->getCurrency();
+            return $price;
+        }
+        return null;
+    }
+
     public function getAllPrices($productId){
         $db = MDBConnection::getConnection();
         $sql = $db->prepare("SELECT * FROM price WHERE product = ? ");
@@ -46,7 +59,7 @@ class MPrice {
 
     public function save(){
         $db = MDBConnection::getConnection();
-        $sql = $db->prepare("INSERT INTO price(product, price, currency, `from`, status) VALUES(?,?,?,NOW(),?)");
+        $sql = $db->prepare("INSERT INTO price(product, price, currency, `from`, status) LUES(?,?,?,NOW(),?)");
         $result = $sql->execute(array($this->product, $this->price, $this->currency, MStatus::ACTIVE));
         $this->id = $db->lastInsertId();
         return $result;
@@ -63,7 +76,13 @@ class MPrice {
         $new->currency = $this->currency;
         $new->status = MStatus::ACTIVE;
 
+        $old = MPrice::getLastPrice($this->product);
         $new->save();
+
+        $cards = MStorageCard::getByProductId($this->product);
+        foreach($cards as $card){
+            $card->doPriceChange($old, $new);
+        }
         return $new;
     }
 

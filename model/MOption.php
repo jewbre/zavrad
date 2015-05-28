@@ -63,7 +63,20 @@ class MOption {
         $db = MDBConnection::getConnection();
         $sql = $db->prepare("SELECT * FROM options");
         if($sql->execute()) {
-            return $sql->fetchAll(PDO::FETCH_OBJ);
+            $results = $sql->fetchAll(PDO::FETCH_OBJ);
+            $data = new stdClass();
+            foreach($results as $result){
+                $name = $result->name;
+                $data->$name = new stdClass();
+                $data->$name->value = $result->value;
+
+                switch($name){
+                    case "allowBuying":
+                        $data->$name->value = boolval($result->value);
+                        break;
+                }
+            }
+            return $data;
         }
         return false;
     }

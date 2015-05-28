@@ -39,6 +39,33 @@ class VOptions implements IView{
                                 <span ng-bind="options.pageExcerpt.error"></span>
                             </div>
                         </div>
+
+
+                        <div class="form-text-input">
+                            <label for="allowBuying" class="checkbox-label"> <?=t("allowBuyingLabel");?> </label>
+                            <input type="checkbox" name="allowBuying" id="allowBuying" class="checkbox" ng-model="options.allowBuying.value" />
+                        </div>
+
+
+                        <div class="form-text-input">
+                            <label for="backgroundColor"> <?=t("backgroundColorLabel");?> </label>
+                            <input type="text" name="backgroundColor" id="backgroundColor" class="small-text-box" ng-model="options.backgroundColor.value" />
+                            <div class="color-box-small" ng-style="{'background-color' : options.backgroundColor.value}"></div>
+                        </div>
+
+
+                        <div class="form-text-input">
+                            <label for="textColor"> <?=t("textColorLabel");?> </label>
+                            <input type="text" name="textColor" id="textColor" class="small-text-box" ng-model="options.textColor.value" />
+                            <div class="color-box-small" ng-style="{'background-color' : options.textColor.value}"></div>
+                        </div>
+
+                    </fieldset>
+                    <fieldset>
+                        <button class="confirm-button-blue" ng-click="save()">
+                            <i class="fa fa-spinner fa-lg" ng-if="saving"></i>
+                            <?=t("saveLabel")?>
+                        </button>
                     </fieldset>
                 </form>
             </div>

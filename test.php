@@ -13,8 +13,8 @@ include_once "model/MTemplate.php";
 include_once "model/MComponent.php";
 
 
-$tmp = MTemplate::get(3);
-
+//$tmp = MTemplate::get(3);
+$tmp = new MTemplate();
 /* Menu */
 //$tmp->name = "menuLabel";
 //$tmp->defaultOptions = array(
@@ -62,20 +62,81 @@ $tmp = MTemplate::get(3);
 //);
 
 /* Slider */
-$tmp->name = "sliderLabel";
+//$tmp->name = "sliderLabel";
+//$tmp->defaultOptions = array(
+//    "sliderImages" => array(
+//        "name" => "slider",
+//        "type" => MTemplate::TYPE_SLIDER,
+//        "images" => array(
+//            array(
+//                "url" => ""
+//            )
+//        )
+//    ),
+//    "menuItems" => array(
+//        "name" => "menuItems",
+//        "type" => MTemplate::TYPE_MENU_ITEMS,
+//        "items" => array(
+//            array(
+//                "value" => "Menu item example",
+//                "error" => "",
+//            )
+//        )
+//    ),
+//    "backgroundColor" => array(
+//        "name" => "backgroundColorLabel",
+//        "type" => "backgroundColor",
+//        "value" => "",
+//        "error" => ""
+//    ),
+//    "textColor" => array(
+//        "name" => "textColorLabel",
+//        "type" => "textColor",
+//        "value" => "",
+//        "error" => ""
+//    ),
+//    "name" => "slider-1"
+//);
+
+
+/* Basic listing 2*/
+//$tmp->name = "productListing2Label";
+//$tmp->defaultOptions = array(
+//    "backgroundColor" => array(
+//        "name" => "backgroundColorLabel",
+//        "type" => "backgroundColor",
+//        "value" => "#fff",
+//        "error" => "",
+//    ),
+//    "textColor" => array(
+//        "name" => "textColorLabel",
+//        "type" => "textColor",
+//        "value" => "#000",
+//        "error" => "",
+//    ),
+//    "name" => "basic-listing-2"
+//);
+
+
+/* Single modern */
+
+/* Basic listing 2*/
+$tmp->name = "singleModernLabel";
 $tmp->defaultOptions = array(
-    "sliderImages" => array(
-        "name" => "slider",
-        "type" => MTemplate::TYPE_SLIDER,
-        "images" => array(
-            array(
-                "url" => ""
-            )
-        )
+    "backgroundColor" => array(
+        "name" => "backgroundColorLabel",
+        "type" => "backgroundColor",
+        "value" => "#fff",
+        "error" => "",
     ),
-    "name" => "slider-1"
+    "textColor" => array(
+        "name" => "textColorLabel",
+        "type" => "textColor",
+        "value" => "#000",
+        "error" => "",
+    ),
+    "name" => "single-modern"
 );
-
-
-$tmp->update();
+//$tmp->update();
+$tmp->save();
 var_dump(MTemplate::getAll());

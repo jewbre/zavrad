@@ -84,6 +84,9 @@ $files = array(
     // Components
     array("ComponentBasicListing","components","*"),
     array("ComponentSlider","components","*"),
+    array("ComponentModernListing","components","*"),
+    array("ComponentBasicMenu","components","*"),
+    array("ComponentSingleModern","components","*"),
 
 
     // Exceptions
