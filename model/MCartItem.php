@@ -9,6 +9,10 @@
 class MCartItem {
 
     public $cart;
+
+    /**
+     * @var MProduct|int
+     */
     public $product;
     public $amount;
     public $datetime;
@@ -42,9 +46,9 @@ class MCartItem {
     public function save(){
         $db = MDBConnection::getConnection();
         $sql = $db->prepare("INSERT INTO cart_items(cart_id, product_id, amount, datetime) VALUES(?,?,?,NOW())");
-        $result = $sql->execute(array($this->cart, $this->product, $this->amount));
+        $result = $sql->execute(array($this->cart, $this->getProduct()->id, $this->amount));
 
-        $mci = self::get($this->cart, $this->product);
+        $mci = self::get($this->cart, $this->getProduct()->id);
 
         $this->product = $mci->product;
         $this->datetime = $mci->datetime;
@@ -55,7 +59,7 @@ class MCartItem {
     public function update(){
         $db = MDBConnection::getConnection();
         $sql = $db->prepare("UPDATE cart_items SET amount = ?, datetime = NOW() WHERE cart_id = ? AND product_id = ?");
-        return $sql->execute(array($this->amount, $this->cart, $this->product));
+        return $sql->execute(array($this->amount, $this->cart, $this->getProduct()->id));
     }
 
 
@@ -68,7 +72,7 @@ class MCartItem {
     public function delete(){
         $db = MDBConnection::getConnection();
         $sql = $db->prepare("DELETE FROM cart_items WHERE cart_id = ? AND product_id = ?");
-        return $sql->execute(array($this->cart, $this->product->id));
+        return $sql->execute(array($this->cart, $this->getProduct()->id));
     }
 
     public function add($amount) {
@@ -80,6 +84,15 @@ class MCartItem {
         }
     }
 
+    /**
+     * @return MProduct|null
+     */
+    public function getProduct(){
+        if($this->product instanceof MProduct) return $this->product;
+        $this->product = MProduct::get($this->product);
+        $this->product->loadEverything();
+        return $this->product;
+    }
     public function remove($amount){
         $this->add(-$amount);
     }
@@ -88,6 +101,7 @@ class MCartItem {
         $mci = new MCartItem();
         $mci->cart = $data->cart_id;
         $mci->product = MProduct::get($data->product_id);
+        $mci->product->loadEverything();
         $mci->amount = $data->amount;
         $mci->datetime = $data->datetime;
 

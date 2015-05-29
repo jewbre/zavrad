@@ -108,7 +108,8 @@ class ComponentSingleModern implements IComponent {
                             if($this->data["cart-enabled"]){
                                 ?>
                                 <div class="half right">
-                                <button class="cart-button">
+                                    <input type="number" class="small-text-box" ng-model="cartAmount" ng-value="1" min="1" style="vertical-align: middle"/>
+                                <button class="cart-button" ng-click="addToCart()">
                                     <i class="fa fa-shopping-cart"></i>
                                 </button>
                                 </div>

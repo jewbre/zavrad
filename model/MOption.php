@@ -41,17 +41,19 @@ class MOption {
      * @return bool success of the operation.
      */
     public function saveOrUpdate(){
-        if(empty($this->name) || empty($this->value)) return false;
+        if(empty($this->name)) return false;
 
         $db = MDBConnection::getConnection();
         $getSql = $db->prepare("SELECT * FROM options WHERE name = ?");
         $getSql->execute(array($this->name));
         if($result = $getSql->fetch(PDO::FETCH_OBJ)) {
             $updateSql = $db->prepare("UPDATE options SET value = ? WHERE name = ?");
-            return $updateSql->execute(array($this->value, $this->name));
+            $result = $updateSql->execute(array($this->value, $this->name));
+            return $result;
         } else {
-            $saveSql = $db->prepare("INSERT INTO options VALUES(?,?)");
-            return $saveSql->execute(array($this->name, $this->value));
+            $saveSql = $db->prepare("INSERT INTO options(name,value) VALUES(?,?)");
+            $result =  $saveSql->execute(array($this->name, strval($this->value)));
+            return $result;
         }
     }
 

@@ -15,12 +15,19 @@ class ComponentFactory {
     const SLIDER_FIRST = "slider-1";
 
     const SINGLE_MODERN = "single-modern";
+
+    const BASIC_CART = "basic-cart";
+
     /**
      * @param $data
      * @return IComponent
      */
     public function generate($data, $externalData = null) {
         $data->globalOptions = MOption::getAll();
+        if(!$data->globalOptions->allowBuying->value && $externalData["routeElements"][1] == "cart") {
+            header("Location: /");
+            die();
+        }
         switch($data->template->name){
             case self::BASIC_LISTING_1 :
                 return new ComponentBasicListing($data);
@@ -38,6 +45,11 @@ class ComponentFactory {
             case self::SINGLE_MODERN:
                 $data->productId = $externalData["routeElements"][2];
                 return new ComponentSingleModern($data);
+
+            case self::BASIC_CART:
+                return new ComponentBasicCart($data);
+
+
         }
 
         return false;

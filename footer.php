@@ -58,7 +58,7 @@ class Footer{
     <script src="<?= baseUrl("js/components/basicListingCtrl.js") ?>"></script>
     <script src="<?= baseUrl("js/components/sliderCtrl.js") ?>"></script>
     <script src="<?= baseUrl("js/components/singleModernCtrl.js") ?>"></script>
-
+    <script src="<?= baseUrl("js/components/basicCartCtrl.js") ?>"></script>
 
 </section>
 </html>

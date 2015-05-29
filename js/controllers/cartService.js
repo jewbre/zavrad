@@ -3,7 +3,7 @@
  */
 
 
-app.service("cartCtrl",["$rootScope", "$http",function($rootScope, $http){
+app.service("cartService",["$rootScope", "$http",function($rootScope, $http){
     var CartService = {
         cart: "",
         init: function () {

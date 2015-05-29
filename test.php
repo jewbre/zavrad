@@ -120,8 +120,26 @@ $tmp = new MTemplate();
 
 /* Single modern */
 
-/* Basic listing 2*/
-$tmp->name = "singleModernLabel";
+//$tmp->name = "singleModernLabel";
+//$tmp->defaultOptions = array(
+//    "backgroundColor" => array(
+//        "name" => "backgroundColorLabel",
+//        "type" => "backgroundColor",
+//        "value" => "#fff",
+//        "error" => "",
+//    ),
+//    "textColor" => array(
+//        "name" => "textColorLabel",
+//        "type" => "textColor",
+//        "value" => "#000",
+//        "error" => "",
+//    ),
+//    "name" => "single-modern"
+//);
+
+
+/* Basic cart */
+$tmp->name = "basicCartLabel";
 $tmp->defaultOptions = array(
     "backgroundColor" => array(
         "name" => "backgroundColorLabel",
@@ -135,8 +153,9 @@ $tmp->defaultOptions = array(
         "value" => "#000",
         "error" => "",
     ),
-    "name" => "single-modern"
+    "name" => "basic-cart"
 );
+
 //$tmp->update();
 $tmp->save();
 var_dump(MTemplate::getAll());

@@ -25,6 +25,7 @@ class MCart {
             $c = new MCart();
             $c->id = $result->id;
             $c->hash = $result->user_hash;
+            $c->getItems();
             return $c;
         }
         return null;
@@ -39,6 +40,7 @@ class MCart {
             $c = new MCart();
             $c->id = $result->id;
             $c->hash = $result->user_hash;
+            $c->getItems();
             return $c;
         }
         return null;
@@ -70,6 +72,7 @@ class MCart {
             $ci->amount = $amount;
             $ci->save();
         }
+
         $this->getItems();
     }
 
@@ -108,6 +111,7 @@ class MCart {
         $cart = new MCart();
         $cart->hash = $hash;
         $cart->save();
+        $_SESSION["cart-hash"] = $hash;
 
         return $cart;
     }

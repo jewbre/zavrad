@@ -119,7 +119,6 @@ class VProducts implements IView{
                         <th>
                             <?=t("descriptionLabel") ?>
                         </th>
-                        <th></th>
                         </thead>
                         <tbody>
                         <tr ng-repeat="product in products">
@@ -127,6 +126,8 @@ class VProducts implements IView{
                                 {{ product.id }}
                             </td>
                             <td>
+                                <i class="fa fa-pencil-square-o fa-lg" ng-click="edit(product)"></i>
+                                <i class="fa fa-times fa-lg" ng-click="delete(product)"></i>
                                 {{ product.name }}
                             </td>
                             <td>
@@ -137,13 +138,6 @@ class VProducts implements IView{
                             </td>
                             <td>
                                 {{ product.description }}
-                            </td>
-                            <td>
-
-                                <div>
-                                    <i class="fa fa-pencil-square-o fa-lg" ng-click="edit(product)"></i>
-                                    <i class="fa fa-times fa-lg" ng-click="delete(product)"></i>
-                                </div>
                             </td>
                         </tr>
                         </tbody>

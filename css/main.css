@@ -616,7 +616,7 @@ button {
 }
 
 .design-list {
-    height:350px;
+    height:250px;
     overflow-y: scroll;
     margin-bottom: 20px;
     background-color: rgba(251, 251, 251, 0.60);
@@ -626,7 +626,7 @@ button {
     text-align: center;
     position: fixed;
     bottom:0px;
-    right:0px;
+    right:-200px;
     opacity:0.5;
     transition:all 0.2s ease-in-out;
     box-shadow: 0px 0px 25px #000;
@@ -637,6 +637,7 @@ button {
 
 .builder-action-buttons:hover {
     opacity: 1;
+    right:0px;
 }
 
 .builder-action-buttons .form-text-input {
@@ -924,6 +925,27 @@ button {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d3d3d3',GradientType=0 ); /* IE6-9 */
 }
 
+.grey-table i {
+    cursor: pointer;
+    font-size: 16px;
+    display:inline-block;
+
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+
+    opacity:0.01;
+}
+
+.grey-table tr:hover i{
+    opacity: 1;
+}
+
+.grey-table tr td:nth-child(2) {
+    text-align: left;
+}
 
 
 

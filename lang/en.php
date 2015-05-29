@@ -74,6 +74,11 @@ $lang = array(
     "sliderLabel" => "Slider",
     "allowBuyingLabel" => "Allow buying on site",
     "singleModernLabel" => "Single product - modern",
+    "basicCartLabel" => "Basic cart",
+    "cartLabel" => "Cart",
+    "singlePriceLabel" => "Single item price",
+    "productLabel" => "Product",
+    "totalLabel" => "Total",
 
     // Page rulers
     "windowPageRuler" => "This marks the boundaries of the site. Make sure you're inside of them.",

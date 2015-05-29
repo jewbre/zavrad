@@ -26,8 +26,9 @@ class COptions extends CMain{
         $params = $this->receiveAjax();
 
         foreach($params as $name => $option){
-            $mo = new MOption($name, $option->value);
-            $mo->saveOrUpdate();
+            $mo = new MOption($name, $name == "allowBuying" ? intval($option->value) : $option->value);
+            var_dump($mo);
+            var_dump($mo->saveOrUpdate());
         }
     }
 }

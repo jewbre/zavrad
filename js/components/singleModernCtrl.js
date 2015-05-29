@@ -3,8 +3,10 @@
  */
 
 
-app.controller("singleModernCtrl",["$scope", "singleProductService",
-    function($scope, singleProductService){
+app.controller("singleModernCtrl",["$scope", "singleProductService", "cartService",
+    function($scope, singleProductService, cartService){
+
+        cartService.init();
 
         $scope.currentImage = 0;
         $scope.nextImage = function(){
@@ -51,6 +53,11 @@ app.controller("singleModernCtrl",["$scope", "singleProductService",
         $scope.hideImage = function(id){
             return !$scope.showImage(id);
         };
+
+        $scope.addToCart = function(){
+            if(!parseInt($scope.cartAmount) || $scope.cartAmount < 1) return;
+            cartService.add(singleProductService.product.id, $scope.cartAmount);
+        }
 
 
     }]);
