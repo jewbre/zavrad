@@ -6,15 +6,13 @@
  * Time: 1:17
  */
 session_start();
-include_once "constants.php";
-include_once "functions.php";
-include_once "model/MDBConnection.php";
-include_once "model/MTemplate.php";
-include_once "model/MComponent.php";
+include_once "autoloader.php";
 
+$obj = new CShippingAddress();
+$obj->getUserAdresses();
 
 //$tmp = MTemplate::get(3);
-$tmp = new MTemplate();
+//$tmp = new MTemplate();
 /* Menu */
 //$tmp->name = "menuLabel";
 //$tmp->defaultOptions = array(
@@ -139,23 +137,23 @@ $tmp = new MTemplate();
 
 
 /* Basic cart */
-$tmp->name = "basicCartLabel";
-$tmp->defaultOptions = array(
-    "backgroundColor" => array(
-        "name" => "backgroundColorLabel",
-        "type" => "backgroundColor",
-        "value" => "#fff",
-        "error" => "",
-    ),
-    "textColor" => array(
-        "name" => "textColorLabel",
-        "type" => "textColor",
-        "value" => "#000",
-        "error" => "",
-    ),
-    "name" => "basic-cart"
-);
+//$tmp->name = "basicCartLabel";
+//$tmp->defaultOptions = array(
+//    "backgroundColor" => array(
+//        "name" => "backgroundColorLabel",
+//        "type" => "backgroundColor",
+//        "value" => "#fff",
+//        "error" => "",
+//    ),
+//    "textColor" => array(
+//        "name" => "textColorLabel",
+//        "type" => "textColor",
+//        "value" => "#000",
+//        "error" => "",
+//    ),
+//    "name" => "basic-cart"
+//);
 
 //$tmp->update();
-$tmp->save();
-var_dump(MTemplate::getAll());
+//$tmp->save();
+//var_dump(MTemplate::getAll());

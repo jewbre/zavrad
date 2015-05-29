@@ -206,6 +206,7 @@
     width:inherit;
     height: inherit;
     position: absolute;
+    overflow: hidden;;
     top:0px;
     left:0px;
     z-index:2;

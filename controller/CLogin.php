@@ -58,8 +58,9 @@ class CLogin extends CMain{
      * Save successful login to client.
      * @param $user
      */
-    public static function registerLogin($user){
-        $_SESSION["web-user"] = json_encode($user);
+    public static function registerLogin(MUser $user){
+        $user->createSessionId();
+        $_SESSION["web-user"] = $user->_session_id;
     }
 
     /**
@@ -76,7 +77,7 @@ class CLogin extends CMain{
      */
     public static function getLoggedIn(){
         if(CLogin::isLoggedIn()) {
-            return json_decode($_SESSION["web-user"]);
+            return MUser::getUserBySessionId($_SESSION["web-user"]);
         }
         return null;
     }

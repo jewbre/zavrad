@@ -19,6 +19,7 @@ class MUser {
     public $_password;
     public $_salt;
     public $_authority;
+    public $_session_id;
 
 
     /**
@@ -177,5 +178,36 @@ class MUser {
         $user = MUser::get($email);
         if($user == null) return false;
         return $user->checkPassword($password);
+    }
+
+
+    public function setSessionId($sessionId)
+    {
+        $this->_session_id = $sessionId;
+        $db = MDBConnection::getConnection();
+        $sql = $db->prepare("UPDATE user SET session_id = ? WHERE id = ?");
+        $sql->execute(array($sessionId, $this->_id));
+    }
+
+    public static function getUserBySessionId($sessionId)
+    {
+        $db = MDBConnection::getConnection();
+        $sql = $db->prepare("SELECT * FROM user WHERE session_id = ?");
+        $sql->setFetchMode(PDO::FETCH_OBJ);
+        $results = $sql->execute(array($sessionId));
+        if($results && $result = $sql->fetch()) {
+            $user = new MUser($result->email, $result->password, $result->salt);
+            $user->_session_id = $sessionId;
+            $user->_id = $result->id;
+            $user->_authority = $result->authority;
+            return $user;
+        }
+        return null;
+    }
+
+    public function createSessionId()
+    {
+        $session_id = crypt($this->_salt . $this->_email . time(), "$6$" . $this->_salt);
+        $this->setSessionId($session_id);
     }
 }

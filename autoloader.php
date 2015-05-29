@@ -45,6 +45,9 @@ $files = array(
     array("MTypeInOut","model","*"),
     array("MCart","model","*"),
     array("MCartItem","model","*"),
+    array("MShippingAddress","model","*"),
+    array("MShippingMethod","model","*"),
+    array("MPaymentMethod","model","*"),
 
     // Controllers
     array("CMain","controller","*"),
@@ -62,6 +65,9 @@ $files = array(
     array("CPages","controller","*"),
     array("CStorage","controller","*"),
     array("CCart","controller","*"),
+    array("CShippingAddress","controller","*"),
+    array("CShippingMethod","controller","*"),
+    array("CPaymentMethod","controller","*"),
 
     // Layouts
     array("VAdminLayout","view/layout",array("admin")),

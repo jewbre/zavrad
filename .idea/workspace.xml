@@ -2,22 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b7511cb-66ae-4d8b-a213-048c18c9b285" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/ComponentBasicCart.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/components/basicCartCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/COptions.php" afterPath="$PROJECT_DIR$/controller/COptions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/factory/ComponentFactory.php" afterPath="$PROJECT_DIR$/factory/ComponentFactory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/ComponentSingleModern.php" afterPath="$PROJECT_DIR$/components/ComponentSingleModern.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/MCart.php" afterPath="$PROJECT_DIR$/model/MCart.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/MCartItem.php" afterPath="$PROJECT_DIR$/model/MCartItem.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/MOption.php" afterPath="$PROJECT_DIR$/model/MOption.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/VProducts.php" afterPath="$PROJECT_DIR$/view/VProducts.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/CPaymentMethod.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/CShippingAddress.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/CShippingMethod.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/MPaymentMethod.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/MShippingAddress.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/MShippingMethod.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/factory/PaymentFactory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/CLogin.php" afterPath="$PROJECT_DIR$/controller/CLogin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/MUser.php" afterPath="$PROJECT_DIR$/model/MUser.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/autoloader.php" afterPath="$PROJECT_DIR$/autoloader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/cartService.js" afterPath="$PROJECT_DIR$/js/controllers/cartService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/components-style.css" afterPath="$PROJECT_DIR$/css/components-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lang/en.php" afterPath="$PROJECT_DIR$/lang/en.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/footer.php" afterPath="$PROJECT_DIR$/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/components/singleModernCtrl.js" afterPath="$PROJECT_DIR$/js/components/singleModernCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.php" afterPath="$PROJECT_DIR$/test.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -44,111 +39,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="en.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lang/en.php">
+      <file leaf-file-name="autoloader.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/autoloader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.423077" vertical-offset="874" max-vertical-offset="1938">
-              <caret line="80" column="28" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
+            <state vertical-scroll-proportion="-9.846154" vertical-offset="492" max-vertical-offset="2023">
+              <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ComponentBasicCart.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/ComponentBasicCart.php">
+      <file leaf-file-name="PaymentFactory.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/factory/PaymentFactory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.5" vertical-offset="1359" max-vertical-offset="2244">
-              <caret line="101" column="68" selection-start-line="101" selection-start-column="68" selection-end-line="101" selection-end-column="68" />
+            <state vertical-scroll-proportion="0.36497176" vertical-offset="0" max-vertical-offset="885">
+              <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="components-style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/components-style.css">
+      <file leaf-file-name="CShippingMethod.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/CShippingMethod.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="5562" max-vertical-offset="6613">
-              <caret line="340" column="0" selection-start-line="340" selection-start-column="0" selection-end-line="343" selection-end-column="1" />
+            <state vertical-scroll-proportion="-29.461538" vertical-offset="934" max-vertical-offset="1819">
+              <caret line="105" column="5" selection-start-line="9" selection-start-column="0" selection-end-line="105" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="basicCartCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/components/basicCartCtrl.js">
+      <file leaf-file-name="CLogin.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/CLogin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state vertical-scroll-proportion="-26.692308" vertical-offset="530" max-vertical-offset="1428">
+              <caret line="77" column="27" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="2805">
+              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CUser.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/CUser.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="2040">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#0#51#0" expanded="false" />
+                <marker date="1427322508441" expanded="true" signature="234:269" placeholder="SELECT id,em..user..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/main.css">
+      <file leaf-file-name="MPaymentMethod.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/MPaymentMethod.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="15422" max-vertical-offset="29478">
-              <caret line="940" column="0" selection-start-line="940" selection-start-column="0" selection-end-line="940" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="productsController.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/controllers/productsController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27222833" vertical-offset="4087" max-vertical-offset="4998">
-              <caret line="255" column="27" selection-start-line="255" selection-start-column="27" selection-end-line="255" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VProducts.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/VProducts.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.230769" vertical-offset="1495" max-vertical-offset="2550">
-              <caret line="104" column="34" selection-start-line="104" selection-start-column="34" selection-end-line="104" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/footer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-29.846153" vertical-offset="210" max-vertical-offset="1173">
-              <caret line="63" column="7" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cartService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/controllers/cartService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1139">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MCartItem.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/MCartItem.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-28.153847" vertical-offset="951" max-vertical-offset="1870">
-              <caret line="104" column="37" selection-start-line="104" selection-start-column="37" selection-end-line="104" selection-end-column="37" />
+            <state vertical-scroll-proportion="-27.5" vertical-offset="883" max-vertical-offset="1836">
+              <caret line="99" column="35" selection-start-line="99" selection-start-column="35" selection-end-line="99" selection-end-column="35" />
               <folding>
-                <marker date="1432860647155" expanded="true" signature="364:425" placeholder="SELECT * FRO..cart_items..." />
-                <marker date="1432860647155" expanded="true" signature="766:808" placeholder="SELECT * FRO..cart_items..." />
-                <marker date="1432860647155" expanded="true" signature="1188:1269" placeholder="INSERT INTO ..." />
-                <marker date="1432860647155" expanded="true" signature="1651:1738" placeholder="UPDATE cart_..." />
-                <marker date="1432860647155" expanded="true" signature="1962:2002" placeholder="DELETE FROM ..." />
-                <marker date="1432860647155" expanded="true" signature="2164:2223" placeholder="DELETE FROM ..." />
+                <marker date="1432868078734" expanded="true" signature="294:335" placeholder="SELECT * FRO..shipping_method..." />
+                <marker date="1432868078734" expanded="true" signature="630:658" placeholder="SELECT * FRO..shipping_method..." />
+                <marker date="1432868078734" expanded="true" signature="1005:1050" placeholder="SELECT * FRO..shipping_method..." />
+                <marker date="1432868078734" expanded="true" signature="1599:1651" placeholder="INSERT INTO ..." />
+                <marker date="1432868078734" expanded="true" signature="1941:2000" placeholder="UPDATE shipp..." />
+                <marker date="1432868078734" expanded="true" signature="2423:2462" placeholder="DELETE FROM ..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CPaymentMethod.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/CPaymentMethod.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="1819">
+              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -161,15 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/view/VPages.php" />
-        <option value="$PROJECT_DIR$/view/VRegistration.php" />
-        <option value="$PROJECT_DIR$/view/VTest.php" />
-        <option value="$PROJECT_DIR$/view/VUsers.php" />
-        <option value="$PROJECT_DIR$/interfaces/IComponent.php" />
-        <option value="$PROJECT_DIR$/interfaces/ILayout.php" />
-        <option value="$PROJECT_DIR$/view/layout/VAdminLayout.php" />
-        <option value="$PROJECT_DIR$/js/basicListingCtrl.js" />
-        <option value="$PROJECT_DIR$/js/services/productListingService.js" />
         <option value="$PROJECT_DIR$/components/ComponentBasicListing.php" />
         <option value="$PROJECT_DIR$/js/components/basicListingCtrl.js" />
         <option value="$PROJECT_DIR$/css/style.css" />
@@ -199,19 +165,28 @@
         <option value="$PROJECT_DIR$/components/ComponentSingleModern.php" />
         <option value="$PROJECT_DIR$/js/components/singleModernCtrl.js" />
         <option value="$PROJECT_DIR$/model/MCart.php" />
-        <option value="$PROJECT_DIR$/test.php" />
-        <option value="$PROJECT_DIR$/autoloader.php" />
         <option value="$PROJECT_DIR$/controller/COptions.php" />
         <option value="$PROJECT_DIR$/model/MOption.php" />
         <option value="$PROJECT_DIR$/factory/ComponentFactory.php" />
         <option value="$PROJECT_DIR$/model/MCartItem.php" />
         <option value="$PROJECT_DIR$/footer.php" />
         <option value="$PROJECT_DIR$/lang/en.php" />
-        <option value="$PROJECT_DIR$/css/components-style.css" />
         <option value="$PROJECT_DIR$/components/ComponentBasicCart.php" />
         <option value="$PROJECT_DIR$/js/components/basicCartCtrl.js" />
         <option value="$PROJECT_DIR$/view/VProducts.php" />
         <option value="$PROJECT_DIR$/css/main.css" />
+        <option value="$PROJECT_DIR$/test.php" />
+        <option value="$PROJECT_DIR$/controller/CLogin.php" />
+        <option value="$PROJECT_DIR$/model/MUser.php" />
+        <option value="$PROJECT_DIR$/controller/CShippingAddress.php" />
+        <option value="$PROJECT_DIR$/css/components-style.css" />
+        <option value="$PROJECT_DIR$/model/MShippingAddress.php" />
+        <option value="$PROJECT_DIR$/model/MShippingMethod.php" />
+        <option value="$PROJECT_DIR$/controller/CShippingMethod.php" />
+        <option value="$PROJECT_DIR$/model/MPaymentMethod.php" />
+        <option value="$PROJECT_DIR$/controller/CPaymentMethod.php" />
+        <option value="$PROJECT_DIR$/autoloader.php" />
+        <option value="$PROJECT_DIR$/factory/PaymentFactory.php" />
       </list>
     </option>
   </component>
@@ -618,7 +593,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432849160240</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="A whole bunch of stuff">
+      <created>1432863577933</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1432863577933</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -675,109 +656,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/view/VMediaLibrary.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1054">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="27" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/components/sliderCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1139">
-          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#51#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/CPages.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="833">
-          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.706897" vertical-offset="3834" max-vertical-offset="5644">
-          <caret line="245" column="11" selection-start-line="245" selection-start-column="11" selection-end-line="245" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/CComponent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="2380">
-          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/MComponent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.23077" vertical-offset="2072" max-vertical-offset="2958">
-          <caret line="167" column="50" selection-start-line="167" selection-start-column="50" selection-end-line="167" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/ComponentBasicListing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47968397" vertical-offset="0" max-vertical-offset="1479">
-          <caret line="30" column="57" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/MTemplate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.884615" vertical-offset="1532" max-vertical-offset="2890">
-          <caret line="124" column="30" selection-start-line="124" selection-start-column="30" selection-end-line="124" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/ComponentBasicMenu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.251693" vertical-offset="49" max-vertical-offset="1462">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="24" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/MStorageInOut.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0936794" vertical-offset="153" max-vertical-offset="2822">
-          <caret line="71" column="30" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
-          <folding>
-            <marker date="1432770171470" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..storage_inout..." />
-            <marker date="1432770171470" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..storage_inout..." />
-            <marker date="1432770171470" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/VStorage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29571107" vertical-offset="1064" max-vertical-offset="1972">
-          <caret line="83" column="21" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="912">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="952">
@@ -988,14 +866,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.038462" vertical-offset="1954" max-vertical-offset="2839">
-          <caret line="141" column="28" selection-start-line="141" selection-start-column="14" selection-end-line="141" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/ComponentSlider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-22.23077" vertical-offset="408" max-vertical-offset="1700">
@@ -1008,14 +878,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="2193">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="127" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoloader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.423077" vertical-offset="975" max-vertical-offset="1921">
-          <caret line="89" column="29" selection-start-line="89" selection-start-column="29" selection-end-line="89" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -1073,41 +935,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/MCartItem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.153847" vertical-offset="951" max-vertical-offset="1870">
-          <caret line="104" column="37" selection-start-line="104" selection-start-column="37" selection-end-line="104" selection-end-column="37" />
-          <folding>
-            <marker date="1432860647155" expanded="true" signature="364:425" placeholder="SELECT * FRO..cart_items..." />
-            <marker date="1432860647155" expanded="true" signature="766:808" placeholder="SELECT * FRO..cart_items..." />
-            <marker date="1432860647155" expanded="true" signature="1188:1269" placeholder="INSERT INTO ..." />
-            <marker date="1432860647155" expanded="true" signature="1651:1738" placeholder="UPDATE cart_..." />
-            <marker date="1432860647155" expanded="true" signature="1962:2002" placeholder="DELETE FROM ..." />
-            <marker date="1432860647155" expanded="true" signature="2164:2223" placeholder="DELETE FROM ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.846153" vertical-offset="210" max-vertical-offset="1173">
-          <caret line="63" column="7" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lang/en.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.423077" vertical-offset="874" max-vertical-offset="1938">
           <caret line="80" column="28" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/cartService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1139">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1119,22 +950,6 @@
           <folding>
             <element signature="e#0#51#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/VProducts.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.230769" vertical-offset="1495" max-vertical-offset="2550">
-          <caret line="104" column="34" selection-start-line="104" selection-start-column="34" selection-end-line="104" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/components-style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5562" max-vertical-offset="6613">
-          <caret line="340" column="0" selection-start-line="340" selection-start-column="0" selection-end-line="343" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1158,6 +973,199 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.27222833" vertical-offset="4087" max-vertical-offset="4998">
           <caret line="255" column="27" selection-start-line="255" selection-start-column="27" selection-end-line="255" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/VProducts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21242937" vertical-offset="1495" max-vertical-offset="2550">
+          <caret line="104" column="34" selection-start-line="104" selection-start-column="34" selection-end-line="104" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8768362" vertical-offset="210" max-vertical-offset="1173">
+          <caret line="63" column="7" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/cartService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.018660812" vertical-offset="68" max-vertical-offset="1139">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/MCartItem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.82711864" vertical-offset="951" max-vertical-offset="1870">
+          <caret line="104" column="37" selection-start-line="104" selection-start-column="37" selection-end-line="104" selection-end-column="37" />
+          <folding>
+            <marker date="1432860647155" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..cart_items..." />
+            <marker date="1432860647155" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..cart_items..." />
+            <marker date="1432860647155" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1432860647155" expanded="true" signature="-1:-1" placeholder="UPDATE cart_..." />
+            <marker date="1432860647155" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1432860647155" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/MStatus.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.096045196" vertical-offset="0" max-vertical-offset="1479">
+          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding>
+            <marker date="1428602218262" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..status..." />
+            <marker date="1428602218262" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..status..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/CUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2040">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1427322508441" expanded="true" signature="234:269" placeholder="SELECT id,em..user..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/MUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49311927" vertical-offset="2749" max-vertical-offset="3621">
+          <caret line="192" column="5" selection-start-line="192" selection-start-column="5" selection-end-line="192" selection-end-column="5" />
+          <folding>
+            <marker date="1432865434164" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1432865434164" expanded="true" signature="-1:-1" placeholder="UPDATE user ..." />
+            <marker date="1432865434164" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1432865434164" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..user..." />
+            <marker date="1432865434164" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..user..." />
+            <marker date="1432865434164" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..user..." />
+            <marker date="1432865434164" expanded="true" signature="-1:-1" placeholder="UPDATE user ..." />
+            <marker date="1432865434164" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..user..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/MRegistration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.73509175" vertical-offset="641" max-vertical-offset="1513">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="2805">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/CLogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.692308" vertical-offset="530" max-vertical-offset="1428">
+          <caret line="77" column="27" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/CShippingAddress.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9039548" vertical-offset="2073" max-vertical-offset="3026">
+          <caret line="174" column="23" selection-start-line="174" selection-start-column="23" selection-end-line="174" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/components-style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43452382" vertical-offset="3171" max-vertical-offset="6630">
+          <caret line="208" column="22" selection-start-line="208" selection-start-column="22" selection-end-line="208" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/MShippingAddress.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64334863" vertical-offset="0" max-vertical-offset="1666">
+          <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+          <folding>
+            <marker date="1432867456162" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..shipping_address..." />
+            <marker date="1432867456162" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..shipping_address..." />
+            <marker date="1432867456162" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1432867456162" expanded="true" signature="-1:-1" placeholder="UPDATE shipp..." />
+            <marker date="1432867456162" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/MShippingMethod.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8830275" vertical-offset="947" max-vertical-offset="1819">
+          <caret line="106" column="1" selection-start-line="7" selection-start-column="0" selection-end-line="106" selection-end-column="1" />
+          <folding>
+            <marker date="1432867618216" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..shipping_method..." />
+            <marker date="1432867618216" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..shipping_method..." />
+            <marker date="1432867618216" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..shipping_method..." />
+            <marker date="1432867618216" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1432867618216" expanded="true" signature="-1:-1" placeholder="UPDATE shipp..." />
+            <marker date="1432867618216" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/MPaymentMethod.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-27.5" vertical-offset="883" max-vertical-offset="1836">
+          <caret line="99" column="35" selection-start-line="99" selection-start-column="35" selection-end-line="99" selection-end-column="35" />
+          <folding>
+            <marker date="1432868078734" expanded="true" signature="294:335" placeholder="SELECT * FRO..shipping_method..." />
+            <marker date="1432868078734" expanded="true" signature="630:658" placeholder="SELECT * FRO..shipping_method..." />
+            <marker date="1432868078734" expanded="true" signature="1005:1050" placeholder="SELECT * FRO..shipping_method..." />
+            <marker date="1432868078734" expanded="true" signature="1599:1651" placeholder="INSERT INTO ..." />
+            <marker date="1432868078734" expanded="true" signature="1941:2000" placeholder="UPDATE shipp..." />
+            <marker date="1432868078734" expanded="true" signature="2423:2462" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/CShippingMethod.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-29.461538" vertical-offset="934" max-vertical-offset="1819">
+          <caret line="105" column="5" selection-start-line="9" selection-start-column="0" selection-end-line="105" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/CPaymentMethod.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="1819">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoloader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.846154" vertical-offset="492" max-vertical-offset="2023">
+          <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/factory/PaymentFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36497176" vertical-offset="0" max-vertical-offset="885">
+          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
           <folding />
         </state>
       </provider>
