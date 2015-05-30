@@ -36,7 +36,7 @@ app.controller("loginController", function($scope, $http){
         }).success(function(data){
             if(data.success) {
                 if(data.data.valid) {
-                    window.location.href = "/";
+                    window.location.href = data.data.redirect;
                 } else {
                     $scope.data = data.data.data.data;
 

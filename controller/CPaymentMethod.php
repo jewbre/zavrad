@@ -49,7 +49,7 @@ class CPaymentMethod extends CMain {
 
         $msm = new MPaymentMethod();
         $msm->name = $params->name->value;
-        $msm->status = $params->status->value;
+        $msm->setStatus($params->status->value);
         $msm->save();
 
         $this->setData($msm);
@@ -75,9 +75,9 @@ class CPaymentMethod extends CMain {
             return;
         }
 
-        $msm = MShippingMethod::get($params->id);
+        $msm = MPaymentMethod::get($params->id);
         $msm->name = $params->name->value;
-        $msm->status = $params->status->value;
+        $msm->setStatus($params->status->value);
         $msm->update();
 
         $this->setData($msm);

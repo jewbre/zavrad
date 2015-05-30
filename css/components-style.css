@@ -161,6 +161,28 @@
 .basic-menu .menu-items {
     display: inline-block;
     text-align: left;
+    width:70%;
+    vertical-align: middle;
+}
+
+.basic-menu .user-actions {
+    display:inline-block;
+    width:25%;
+    text-align: right;
+}
+.basic-menu .user-actions a {
+    margin:10px 5px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+
+    opacity: 0.6;
+    display:inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    color:inherit;
 }
 
 .basic-menu .menu-items .menu-item {
@@ -177,12 +199,16 @@
     text-decoration: none;
     color:inherit;
 }
-.basic-menu:hover .menu-items .menu-item {
+.basic-menu:hover .menu-items .menu-item, .basic-menu:hover .user-actions a {
     opacity: 1;
 }
 .basic-menu .menu-items .menu-item:hover {
     padding-left:20px;
     padding-right:0px;
+}
+
+.basic-menu .user-actions a:hover {
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
 
 

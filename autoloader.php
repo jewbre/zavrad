@@ -86,6 +86,8 @@ $files = array(
     array("VProducts","view","*"),
     array("VStorage","view","*"),
     array("VPages","view","*"),
+    array("VShippingMethods","view","*"),
+    array("VPaymentMethods","view","*"),
 
     // Components
     array("ComponentBasicListing","components","*"),

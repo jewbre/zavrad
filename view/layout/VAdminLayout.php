@@ -120,6 +120,18 @@ class VAdminLayout implements ILayout{
                         <?=t("pagesLabel")?>
                     </a>
                 </li>
+
+                <li>
+                    <a href="/admin/shipping-method">
+                        <?=t("shippingMethodsLabel")?>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/admin/payment-method">
+                        <?=t("paymentMethodsLabel")?>
+                    </a>
+                </li>
             </ul>
         <?php
     }

@@ -16,8 +16,8 @@ class MPaymentMethod {
     public static function get($id)
     {
         $db = MDBConnection::getConnection();
-        $sql = $db->prepare("SELECT * FROM payment_method WHERE id = ?");
-        $sql->execute(array($id));
+        $sql = $db->prepare("SELECT * FROM payment_method WHERE id = ? AND NOT status = ?");
+        $sql->execute(array($id, MStatus::DELETED));
         if($result = $sql->fetch(PDO::FETCH_OBJ)){
             return self::fillFromDbData($result);
         }
@@ -27,8 +27,8 @@ class MPaymentMethod {
     public static function getAll()
     {
         $db = MDBConnection::getConnection();
-        $sql = $db->prepare("SELECT * FROM payment_method");
-        $sql->execute();
+        $sql = $db->prepare("SELECT * FROM payment_method WHERE NOT status = ?");
+        $sql->execute(array(MStatus::DELETED));
         $data = array();
         foreach($results = $sql->fetchAll(PDO::FETCH_OBJ) as $result){
             $data[] = self::fillFromDbData($result);
@@ -59,11 +59,16 @@ class MPaymentMethod {
         return self::getByStatus(MStatus::INACTIVE);
     }
 
+    public static function getDeleted()
+    {
+        return self::getByStatus(MStatus::DELETED);
+    }
+
     public function save()
     {
         $db = MDBConnection::getConnection();
         $sql = $db->prepare("INSERT INTO payment_method(name, status) VALUES(?,?)");
-        $result = $sql->execute(array($this->name, $this->status));
+        $result = $sql->execute(array($this->name, $this->getStatus()->id));
         if($result) {
             $this->id = $db->lastInsertId();
         }
@@ -74,33 +79,47 @@ class MPaymentMethod {
     {
         $db = MDBConnection::getConnection();
         $sql = $db->prepare("UPDATE payment_method SET name = ?, status = ? WHERE id = ?");
-        return $sql->execute(array($this->name, $this->status, $this->id));
+        return $sql->execute(array($this->name, $this->getStatus()->id, $this->id));
     }
 
     public function activate()
     {
-        $this->status = MStatus::ACTIVE;
+        $this->setStatus(MStatus::ACTIVE);
         return $this->update();
     }
 
     public function deactivate(){
-        $this->status = MStatus::INACTIVE;
+        $this->setStatus(MStatus::INACTIVE);
         $this->update();
     }
 
     public function delete()
     {
-        $db = MDBConnection::getConnection();
-        $sql = $db->prepare("DELETE FROM payment_method WHERE id = ?");
-        return $sql->execute(array($this->id));
+        $this->setStatus(MStatus::DELETED);
+        return $this->update();
     }
+
+
+    public function setStatus($value)
+    {
+        $this->status = MStatus::get($value);
+    }
+
+    /**
+     * @return Mstatus
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
 
     private static function fillFromDbData($data)
     {
         $msm = new MPaymentMethod();
         $msm->id = $data->id;
         $msm->name = $data->name;
-        $msm->status = $data->status;
+        $msm->setStatus($data->status);
 
         return $msm;
     }

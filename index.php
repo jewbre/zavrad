@@ -25,7 +25,30 @@ $atrs[2] = (isset($atrs[2]) ? $atrs[2] : "");
 
 include_once "autoloader.php";
 
+$admin = false;
+if(restrictUser($atrs)) {
 
+    if(CLogin::isLoggedIn()) {
+        if(!CLogin::getLoggedIn()->isAdmin()) {
+            header("Location: /");
+            die();
+        }
+    } else {
+        $redirect = "";
+        foreach($atrs as $atr) {
+            if(!empty($atr)) {
+                $redirect .= "/" . $atr;
+            }
+        }
+
+        if($redirect == "") $redirect = "/";
+
+        $_SESSION["redirect"] = $redirect;
+
+        header("Location: /login");
+        die();
+    }
+}
 
 switch($atrs[0]) {
     case "admin" :
@@ -186,7 +209,61 @@ switch($atrs[0]) {
                         break;
                 }
                 break;
-            case "storage" :
+            case "shipping-method" :
+                switch($atrs[2]) {
+                    case "all":
+                        $obj = new CShippingMethod();
+                        $obj->getAll();
+                        die();
+                    case "save":
+                        $obj = new CShippingMethod();
+                        $obj->save();
+                        die();
+                    case "update":
+                        $obj = new CShippingMethod();
+                        $obj->update();
+                        die();
+                    case "get":
+                        $obj = new CShippingMethod();
+                        $obj->get();
+                        die();
+                    case "delete":
+                        $obj = new CShippingMethod();
+                        $obj->delete();
+                        die();
+                    default:
+                        $view = new VShippingMethods();
+                        break;
+                }
+                break;
+            case "payment-method" :
+                switch($atrs[2]) {
+                    case "all":
+                        $obj = new CPaymentMethod();
+                        $obj->getAll();
+                        die();
+                    case "save":
+                        $obj = new CPaymentMethod();
+                        $obj->save();
+                        die();
+                    case "update":
+                        $obj = new CPaymentMethod();
+                        $obj->update();
+                        die();
+                    case "get":
+                        $obj = new CPaymentMethod();
+                        $obj->get();
+                        die();
+                    case "delete":
+                        $obj = new CPaymentMethod();
+                        $obj->delete();
+                        die();
+                    default:
+                        $view = new VPaymentMethods();
+                        break;
+                }
+                break;
+            case "storage":
                 switch($atrs[2]) {
                     case "cards":
                         $obj = new CStorage();
@@ -261,6 +338,10 @@ switch($atrs[0]) {
         }
         break;
     case "registration" :
+        if(CLogin::isLoggedIn()) {
+            header("Location: /");
+            die();
+        }
         switch($atrs[1]) {
             case "register":
                 $obj = new CRegistration();
@@ -272,6 +353,10 @@ switch($atrs[0]) {
         }
         break;
     case "login" :
+        if(CLogin::isLoggedIn()) {
+            header("Location: /");
+            die();
+        }
         switch($atrs[1]) {
             case "login":
                 $obj = new CLogin();
@@ -282,6 +367,10 @@ switch($atrs[0]) {
                 $view = new VLogin();
                 break;
         }
+        break;
+    case "logout" :
+        $obj = new CLogin();
+        $obj->logout();
         break;
     case "options" :
         switch($atrs[1]){

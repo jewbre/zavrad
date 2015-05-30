@@ -26,6 +26,7 @@ class CLogin extends CMain{
                     array(
                         "valid" => true,
                         "data" => $params,
+                        "redirect" => $_SESSION["redirect"],
                     )
                 );
 
@@ -80,5 +81,13 @@ class CLogin extends CMain{
             return MUser::getUserBySessionId($_SESSION["web-user"]);
         }
         return null;
+    }
+
+    public function logout()
+    {
+        unset($_SESSION["web-user"]);
+        unset($_SESSION["cart-hash"]);
+        header("Location: /");
+        die();
     }
 }

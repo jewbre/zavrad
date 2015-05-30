@@ -79,6 +79,8 @@ $lang = array(
     "singlePriceLabel" => "Single item price",
     "productLabel" => "Product",
     "totalLabel" => "Total",
+    "shippingMethodsLabel" => "Shipping methods",
+    "paymentMethodsLabel" => "Payment methods",
 
     // Page rulers
     "windowPageRuler" => "This marks the boundaries of the site. Make sure you're inside of them.",
@@ -111,4 +113,11 @@ $lang = array(
     "unsuccessfulEdit" => "Something went wrong. Try again.",
     "successfulSave" => "Successful save.",
     "unsuccessfulSave" => "Something went wrong. Try again.",
+
+
+
+    //
+    "alreadyHaveAccount" => "Already have an account?",
+    "dontHaveAccount" => "Don't have an account?",
+    "backToSite" => "Back to site",
 );

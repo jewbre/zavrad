@@ -10,15 +10,20 @@ class Footer{
 
     public function renderPartial($data = null)
     {
-        ?>
-<section>
-    <a href="<?= $data["route"] ?>?lang=en">
-        <img src="<?= image("sprites/flags/uk-flag.png") ?>" />
-    </a>
+        $languages = array("en", "cro");
 
-    <a href="<?= $data["route"] ?>?lang=cro">
-        <img src="<?= image("sprites/flags/cro-flag.png") ?>" />
-    </a>
+        ?>
+<section class="language-options" style="width:<?=count($languages)*30?>px">
+
+    <?php
+            foreach($languages as $lang) {
+                ?>
+                <a href="<?= $data["route"] ?>?lang=<?=$lang?>" <?= isCurrentLanguage($lang) ? 'class="active"' : '' ?>>
+                    <img src="<?= image("sprites/flags/".$lang."-flag.png") ?>"/>
+                </a>
+            <?php
+            }
+                ?>
 </section>
 
 </body>
@@ -51,6 +56,8 @@ class Footer{
     <script src="<?= baseUrl("js/controllers/storage.js") ?>"></script>
     <script src="<?= baseUrl("js/controllers/pagesListing.js") ?>"></script>
     <script src="<?= baseUrl("js/controllers/options.js") ?>"></script>
+    <script src="<?= baseUrl("js/controllers/shippingMethod.js") ?>"></script>
+    <script src="<?= baseUrl("js/controllers/paymentMethod.js") ?>"></script>
 
     <script src="<?= baseUrl("js/controllers/test.js") ?>"></script>
 

@@ -94,6 +94,42 @@ class ComponentSlider implements IComponent {
                 }
                 ?>
             </div>
+            <div class="user-actions">
+                <?php
+                    if(CLogin::isLoggedIn()) {
+                        ?>
+                        <a href="/user">
+                            <i class="fa fa-user fa-lg"></i>
+                        </a>
+                        <a href="/cart">
+                            <i class="fa fa-shopping-cart fa-lg"></i>
+                        </a>
+                        <?php
+                        if(CLogin::getLoggedIn()->isAdmin()) {
+                            ?>
+                            <a href="/admin">
+                                <i class="fa fa-cog fa-lg"></i>
+                            </a>
+                        <?php
+                        }
+                        ?>
+                        <a href="/logout">
+                            <i class="fa fa-power-off fa-lg"></i>
+                        </a>
+
+                    <?php
+                    } else {
+                        ?>
+                        <a href="/registration">
+                            <?=t("registerLabel")?>
+                        </a>
+                        <a href="/login">
+                            <?=t("loginLabel")?>
+                        </a>
+                    <?php
+                    }
+                ?>
+            </div>
         </div>
         <?php
     }

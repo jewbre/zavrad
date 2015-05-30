@@ -210,4 +210,10 @@ class MUser {
         $session_id = crypt($this->_salt . $this->_email . time(), "$6$" . $this->_salt);
         $this->setSessionId($session_id);
     }
+
+
+    public function isAdmin()
+    {
+        return $this->_authority == self::AUTH_ADMIN || $this->_authority == self::AUTH_SUPERADMIN;
+    }
 }

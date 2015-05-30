@@ -49,7 +49,7 @@ class CShippingMethod extends CMain{
 
         $msm = new MShippingMethod();
         $msm->name = $params->name->value;
-        $msm->status = $params->status->value;
+        $msm->setStatus($params->status->value);
         $msm->save();
 
         $this->setData($msm);
@@ -77,7 +77,7 @@ class CShippingMethod extends CMain{
 
         $msm = MShippingMethod::get($params->id);
         $msm->name = $params->name->value;
-        $msm->status = $params->status->value;
+        $msm->setStatus($params->status->value);
         $msm->update();
 
         $this->setData($msm);
