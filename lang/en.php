@@ -81,6 +81,9 @@ $lang = array(
     "totalLabel" => "Total",
     "shippingMethodsLabel" => "Shipping methods",
     "paymentMethodsLabel" => "Payment methods",
+    "widthLabel" => "Width",
+    "heightLabel" => "Height",
+    "sliderPeriodLabel" => "Slider period",
 
     // Page rulers
     "windowPageRuler" => "This marks the boundaries of the site. Make sure you're inside of them.",

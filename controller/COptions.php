@@ -31,4 +31,20 @@ class COptions extends CMain{
             var_dump($mo->saveOrUpdate());
         }
     }
+
+    public function saveMenu()
+    {
+        $params = $this->receiveAjax();
+        $opt = new MOption("menuItems",json_encode($params));
+        $opt->saveOrUpdate();
+
+    }
+
+    public function saveSlider()
+    {
+        $params = $this->receiveAjax();
+        $opt = new MOption("slider",json_encode($params));
+        $opt->saveOrUpdate();
+
+    }
 }

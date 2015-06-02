@@ -100,7 +100,7 @@ class MTemplate {
                     if(empty($option->value)) {
                         $option->error = t("emptyBackgroundColorValue");
                         $valid = false;
-                    } else if(!preg_match("/^#[0-9a-f]{3,6}$/",$option->value)) {
+                    } else if(!preg_match("/^#[0-9a-fA-F]{3,6}$/",$option->value)) {
                         $option->error = t("invalidColorValue");
                         $valid = false;
                     } else {
@@ -111,7 +111,7 @@ class MTemplate {
                     if(empty($option->value)) {
                         $option->error = t("emptyTextColorValue");
                         $valid = false;
-                    } else if(!preg_match("/^#[0-9a-f]{3,6}$/",$option->value)) {
+                    } else if(!preg_match("/^#[0-9a-fA-F]{3,6}$/",$option->value)) {
                         $option->error = t("invalidColorValue");
                         $valid = false;
                     } else {

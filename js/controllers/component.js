@@ -226,38 +226,6 @@ app.controller("componentsController", ["$scope", "$http", "imagesService",
 
         // Components functionality
 
-        // Menu bars
-
-        /**
-         * Add new menu item to the form model.
-         */
-        $scope.menuItemAdd = function(){
-            var arrayLength = $scope.component.template.menuItems.items.length;
-            var index = 0;
-            if(arrayLength > 0) {
-                index = parseInt($scope.component.template.menuItems.items[arrayLength-1].id) + 1;
-            }
-            $scope.component.template.menuItems.items.push(
-                {"id" : index, "value":"New menu item", url : "http://path.to/no/where", "error":""}
-            );
-            console.log($scope.component.template.menuItems);
-        };
-
-        /**
-         * Remove menu item from the form model.
-         * @param elem
-         */
-        $scope.menuItemRemove = function(elemId) {
-            var newArray = [];
-            for(k in $scope.component.template.menuItems.items) {
-                if($scope.component.template.menuItems.items[k].id == elemId) {
-                    continue;
-                }
-                newArray.push($scope.component.template.menuItems.items[k]);
-            }
-            $scope.component.template.menuItems.items = newArray;
-        };
-
         /* Slider functionalities */
         $scope.addSliderImage = function(url){
             $scope.component.template.sliderImages.images.push({url:url});

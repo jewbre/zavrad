@@ -200,6 +200,21 @@ app.controller("productsController", ["$scope", "$http", "imageUpload", function
         });
     };
 
+    $scope.delete = function(product){
+        $http({
+            url : "/admin/products/delete",
+            method: "JSON",
+            data : {
+                product_id : product.id
+            },
+            headers: {
+                'Content-Type': "x www form urlencoded"
+            }
+        }).success(function(data){
+            $scope.getProducts();
+        });
+    };
+
     $scope.getProducts = function(){
         $http({
             url : "/admin/products/all",

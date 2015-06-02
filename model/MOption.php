@@ -31,6 +31,7 @@ class MOption {
         $sql = $db->prepare("SELECT * FROM options WHERE name = ?");
         $sql->execute(array($optionName));
         if($result = $sql->fetchAll(PDO::FETCH_OBJ)) {
+            $result->option = ($result->name == "menuItems" || $result->name == "slider" ) ? json_decode($result->option) : $result->option;
             return new MOption($result->name, $result->option);
         }
         return false;
@@ -74,7 +75,13 @@ class MOption {
 
                 switch($name){
                     case "allowBuying":
-                        $data->$name->value = boolval($result->value);
+                        $data->$name->value = (bool)($result->value);
+                        break;
+                    case "menuItems":
+                        $data->$name->value = json_decode($result->value);
+                        break;
+                    case "slider":
+                        $data->$name->value = json_decode($result->value);
                         break;
                 }
             }

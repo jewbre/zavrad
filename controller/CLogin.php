@@ -26,7 +26,7 @@ class CLogin extends CMain{
                     array(
                         "valid" => true,
                         "data" => $params,
-                        "redirect" => $_SESSION["redirect"],
+                        "redirect" => isset($_SESSION["redirect"]) ? $_SESSION["redirect"] : "/",
                     )
                 );
 

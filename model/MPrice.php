@@ -59,7 +59,7 @@ class MPrice {
 
     public function save(){
         $db = MDBConnection::getConnection();
-        $sql = $db->prepare("INSERT INTO price(product, price, currency, `from`, status) LUES(?,?,?,NOW(),?)");
+        $sql = $db->prepare("INSERT INTO price(product, price, currency, `from`, status) VALUES(?,?,?,NOW(),?)");
         $result = $sql->execute(array($this->product, $this->price, $this->currency, MStatus::ACTIVE));
         $this->id = $db->lastInsertId();
         return $result;

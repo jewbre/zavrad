@@ -109,6 +109,7 @@ function restrictUser($atrs) {
                         case "save":
                         case "update":
                         case "get":
+                        case "delete":
                             $restrict = false;
                             break;
                         default:
@@ -234,4 +235,11 @@ function restrictUser($atrs) {
 
 function isCurrentLanguage($value){
     return $_SESSION["lang"] == $value;
+}
+
+
+function dump($string){
+    echo "<pre>";
+    var_dump($string);
+    echo "</pre>";
 }

@@ -67,6 +67,77 @@ class VOptions implements IView{
                             <?=t("saveLabel")?>
                         </button>
                     </fieldset>
+
+                    <hr>
+                    <fieldset>
+                    <h2><?=t("menuLabel")?></h2>
+                    <div class="form-text-input">
+                        <label for="textColor" class="inline-label"> <?=t("menuItems");?> </label>
+                                <span class="add-icon" ng-click="menuItemAdd()">
+                                    <i class="fa fa-plus-circle fa-lg"></i>
+                                </span>
+                        <div class="inputError">
+                            <span ng-bind="menuItems.error"></span>
+                        </div>
+                        <div ng-repeat="menuItem in menuItems.items">
+                            <input type="text" name="menuItemValue" id="menuItemValue" class="middle-text-box" ng-model="menuItem.value" />
+                            <select ng-model="menuItem.url" ng-options="page.url as page.name for page in pages">
+                            </select>
+                                    <span class="close-icon" ng-click="menuItemRemove(menuItem.id)">
+                                        <i class="fa fa-times fa-lg"></i>
+                                    </span>
+                            <div class="inputError">
+                                <span ng-bind="menuItem.error"></span>
+                            </div>
+                        </div>
+                    </div>
+                    </fieldset>
+                    <fieldset>
+                        <button class="confirm-button-blue" ng-click="saveMenu()">
+                            <i class="fa fa-spinner fa-lg" ng-if="saving"></i>
+                            <?=t("saveLabel")?>
+                        </button>
+                    </fieldset>
+
+                    <hr>
+
+                    <fieldset>
+                        <div class="form-text-input">
+
+                            <div class="form-text-input">
+                                <label for="period"> <?=t("sliderPeriodLabel");?> </label>
+                                <input type="text" name="period" id="period" class="small-text-box" ng-model="slider.period" />
+                                <span>ms (1000ms = 1s, {{slider.period}}ms = {{slider.period/1000}}s)</span>
+                            </div>
+
+                            <div ng-repeat="sliderImage in slider.images track by $index">
+                                <div class="slider-image-action" ng-click="removeSliderImage($index)">
+                                    <i class="fa fa-times fa-lg"></i>
+                                </div>
+                                <div class="slider-image-action green-text" ng-click="moveSliderImageUp($index)">
+                                    <i class="fa fa-caret-square-o-up fa-lg"></i>
+                                </div>
+                                <div class="slider-image-action red-text" ng-click="moveSliderImageDown($index)">
+                                    <i class="fa fa-caret-square-o-down fa-lg"></i>
+                                </div>
+                                <img ng-src="<?=baseUrl("")?>{{sliderImage.url}}" class="slider-image-preview" />
+
+                            </div>
+                            <div class="components-image-holder">
+                                <div ng-repeat="image in images" class="component-library-image" >
+                                    <img ng-src="{{'/'+image.url}}"  ng-click="addSliderImage(image.url)"/>
+                                </div>
+                                <div class="show-more" ng-click="getMoreImages()">
+                                    <p>Show more</p>
+                                </div>
+                            </div>
+                    </fieldset>
+                    <fieldset>
+                        <button class="confirm-button-blue" ng-click="saveSlider()">
+                            <i class="fa fa-spinner fa-lg" ng-if="saving"></i>
+                            <?=t("saveLabel")?>
+                        </button>
+                    </fieldset>
                 </form>
             </div>
         </section>

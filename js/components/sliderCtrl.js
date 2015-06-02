@@ -9,6 +9,7 @@ app.controller("sliderCtrl", ["$scope","$timeout",
         $scope.sliderActive = false;
         $scope.period = 5000;
 
+        $
         $scope.slideNext = function(){
             $scope.current = (++$scope.current) % $scope.size;
         };
@@ -21,7 +22,6 @@ app.controller("sliderCtrl", ["$scope","$timeout",
 
         $scope.rollSliderFront = function(){
             $scope.slideNext();
-            console.log("unutra", $scope.current);
             $scope.$apply();
             $timeout(function(){
                 $scope.rollSliderFront();
@@ -54,11 +54,9 @@ app.controller("sliderCtrl", ["$scope","$timeout",
 
         $scope.amIPrev = function(id){
             return id == ($scope.current+$scope.size-1)%$scope.size;
-        }
+        };
 
         $scope.$watch("size", function(){
             $scope.startSlider();
-        })
-
-        $scope.startSlider();
+        });
 }]);

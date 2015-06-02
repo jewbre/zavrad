@@ -33,11 +33,11 @@ app.service("imagesService", ["$rootScope", "$http",
                     }
                 }).success(function(data){
                     if(data.success && data.data) {
-                        self.images = data.data;
+                        self.images = self.images.concat(data.data);
                         self.paginator.next();
                         $rootScope.$broadcast("images_loaded");
                     } else {
-                        console.log("something went wrong, fix this");
+                        console.log("No more images");
                     }
                 });
             }

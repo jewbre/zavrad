@@ -38,9 +38,9 @@ class VComponents implements IView{
 
                             <div class="form-text-input">
                                 <label><?=t("componentDimensions")?></label>
-                                <input type="text" name="width" id="width" class="small-text-box" ng-model="component.dimensions.width" />
+                                <input type="text" name="width" id="width" class="small-text-box" ng-model="component.dimensions.width" placeholder="<?=t("widthLabel")?>"/>
                                 x
-                                <input type="text" name="height" id="height" class="small-text-box" ng-model="component.dimensions.height" />
+                                <input type="text" name="height" id="height" class="small-text-box" ng-model="component.dimensions.height" placeholder="<?=t("heightLabel")?>"/>
                                 <div class="inputError">
                                     <span ng-bind="component.dimensions.error"></span>
                                 </div>
@@ -115,7 +115,7 @@ class VComponents implements IView{
                                     <div ng-repeat="image in images" class="component-library-image" >
                                         <img ng-src="{{'/'+image.url}}"  ng-click="addSliderImage(image.url)"/>
                                     </div>
-                                    <div class="show-more" ng-click="getMoreImages()">
+                                    <div class="show-more" ng-click="getMoreImages()">Show more</div>
                                 </div>
                             </div>
 

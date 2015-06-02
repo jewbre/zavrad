@@ -158,6 +158,12 @@ input[type="text"]:focus, .text-box:focus, .small-text-box:focus, select:focus{
     height:100px;
 }
 
+.form-text-input span {
+    font-size: 12px;
+    display:inline-block;
+    vertical-align: middle;
+}
+
 .form-text-input .description-box {
     height:150px;
 }

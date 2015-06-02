@@ -12,6 +12,10 @@ class Header implements IView
     public function renderPartial($data = null)
     {
         $options = isset($data->globalOptions) ? $data->globalOptions : MOption::getAll();
+
+        $headerData = new stdClass();
+        $headerData->slider = $options->slider->value;
+        $headerData->menuItems = $options->menuItems->value;
         ?>
 
         <!DOCTYPE html>
@@ -40,6 +44,15 @@ class Header implements IView
             ?>
         </head>
         <body>
+
+        <?php
+            if($data["renderHeader"]) {
+                $header = new ComponentSlider($headerData);
+                $header->render();
+            }
+        ?>
+
+        <div style="position:relative">
 
     <?php }
 }?>

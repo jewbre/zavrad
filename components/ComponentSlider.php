@@ -20,18 +20,9 @@ class ComponentSlider implements IComponent {
 
     public function parseData($data)
     {
-
-        // Style data
-        $this->style["background-color"] = $data->template->backgroundColor->value;
-        $this->style["color"] = $data->template->textColor->value;
-
-
-        $this->data["images"] = $data->template->sliderImages->images;
-        $this->data["c-width"] = $data->width;
-        $this->data["c-height"] = $data->height;
-        $this->data["c-position-x"] = $data->position->x;
-        $this->data["c-position-y"] = $data->position->y;
-        $this->data["menu-items"] = $data->template->menuItems->items;
+        $this->data["images"] = $data->slider->images;
+        $this->data["period"] = $data->slider->period;
+        $this->data["menu-items"] = $data->menuItems->items;
     }
 
     public function render()
@@ -40,14 +31,9 @@ class ComponentSlider implements IComponent {
         $this->renderStyle();
 
         ?>
-        <div class="basic-slider
-        component
-        c-width-<?=$this->data["c-width"]?>
-        c-height-<?=$this->data["c-height"]?>
-        c-position-x<?=$this->data["c-position-x"]?>
-        c-position-y<?=$this->data["c-position-y"]?>"
-        ng-controller="sliderCtrl"
-        ng-init="size=<?=count($this->data["images"])?>"    >
+        <div class="header" xmlns="http://www.w3.org/1999/html">
+        <div class="basic-slider" ng-controller="sliderCtrl"
+        ng-init="size=<?=count($this->data["images"])?>; period=<?=$this->data["period"]?>">
             <?php
             $this->renderComponent();
             ?>
@@ -58,12 +44,11 @@ class ComponentSlider implements IComponent {
     public function renderStyle()
     {
         ?>
-            <style>
-                .basic-menu {
-                    background-color: <?=$this->style["background-color"]?>;
-                    color: <?=$this->style["color"]?>;
-                }
-            </style>
+    <style>
+        .basic-menu {
+            background-color: #b7b7b7;
+        }
+        </style>
         <?php
     }
 
@@ -131,6 +116,7 @@ class ComponentSlider implements IComponent {
                 ?>
             </div>
         </div>
+    </div>
         <?php
     }
 }

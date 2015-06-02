@@ -49,7 +49,9 @@ class VAdminLayout implements ILayout{
     private function renderView(IView $view, $data) {
         ?>
         <div class="page-header">
-            <h1>Header of the page</h1>
+            <a href="/">
+                <h1>Header of the page</h1>
+            </a>
         </div>
 
         <div class="page-content">

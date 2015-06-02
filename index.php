@@ -204,6 +204,10 @@ switch($atrs[0]) {
                         $obj = new CProducts();
                         $obj->get();
                         die();
+                    case "delete":
+                        $obj = new CProducts();
+                        $obj->delete();
+                        die();
                     default:
                         $view = new VProducts();
                         break;
@@ -384,6 +388,16 @@ switch($atrs[0]) {
                 $obj->save();
                 die();
                 break;
+            case "saveMenu":
+                $obj = new COptions();
+                $obj->saveMenu();
+                die();
+                break;
+            case "saveSlider":
+                $obj = new COptions();
+                $obj->saveSlider();
+                die();
+                break;
         };
         break;
 
@@ -407,14 +421,17 @@ $r =  explode('?', $_SERVER['REQUEST_URI'], 2);
 $data = array("route"=> $r, "routeElements" => explode("/", $r[0]));
 
 if($atrs[0] == "admin") {
+    $data["renderHeader"] = false;
     $layout = new VAdminLayout();
     $layout->setupLayout($view, $data);
 } else if(intval($atrs[1])){
-        $page = MPage::getByUrl("/".$atrs[0]."/{id}");
-        $design = MDesign::getByPage($page->id);
-        $layout = new VDisplayLayout($design);
-        $layout->setupLayout(null, $data);
+    $data["renderHeader"] = true;
+    $page = MPage::getByUrl("/".$atrs[0]."/{id}");
+    $design = MDesign::getByPage($page->id);
+    $layout = new VDisplayLayout($design);
+    $layout->setupLayout(null, $data);
 } else if($page = MPage::getByUrl("/".$route)) {
+    $data["renderHeader"] = true;
     $design = MDesign::getByPage($page->id);
     $layout = new VDisplayLayout($design);
     $layout->setupLayout(null, $data);

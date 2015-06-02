@@ -148,4 +148,12 @@ class CProducts extends CMain{
 
         $this->output();
     }
+
+    public function delete()
+    {
+        $params = $this->receiveAjax();
+        $product = MProduct::get($params->product_id);
+        $product->delete();
+
+    }
 }

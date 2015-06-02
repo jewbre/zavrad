@@ -11,14 +11,14 @@ class Footer{
     public function renderPartial($data = null)
     {
         $languages = array("en", "cro");
-
         ?>
+        </div>
 <section class="language-options" style="width:<?=count($languages)*30?>px">
 
     <?php
             foreach($languages as $lang) {
                 ?>
-                <a href="<?= $data["route"] ?>?lang=<?=$lang?>" <?= isCurrentLanguage($lang) ? 'class="active"' : '' ?>>
+                <a href="<?= $data["route"][0] ?>?lang=<?=$lang?>" <?= isCurrentLanguage($lang) ? 'class="active"' : '' ?>>
                     <img src="<?= image("sprites/flags/".$lang."-flag.png") ?>"/>
                 </a>
             <?php
