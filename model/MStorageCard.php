@@ -104,10 +104,10 @@ class MStorageCard {
     public static function getRemaining($productId){
         $db = MDBConnection::getConnection();
         $sql = $db->prepare("SELECT SUM(amount) as total FROM storage_inout WHERE storage_card_id IN (SELECT id FROM storage_card WHERE product_id = ?) AND type_id = ?");
-        $sql->execute(array($productId, MTypeInOut::TYPE_IN));
+        $sql->execute(array($productId, MTypeInOut::getByType(MTypeInOut::TYPE_IN)->id));
         $totalIn = $sql->fetch(PDO::FETCH_OBJ)->total;
 
-        $sql->execute(array($productId, MTypeInOut::TYPE_OUT));
+        $sql->execute(array($productId, MTypeInOut::getByType(MTypeInOut::TYPE_OUT)->id));
         $totalOut = $sql->fetch(PDO::FETCH_OBJ)->total;
         return $totalIn - $totalOut;
     }
@@ -115,7 +115,7 @@ class MStorageCard {
     public function remaining(){
         $db = MDBConnection::getConnection();
         $sql = $db->prepare("SELECT SUM(amount) as total FROM storage_inout WHERE storage_card_id = ? AND type_id = ?");
-        $sql->execute(array($this->id, MTypeInOut::TYPE_OUT));
+        $sql->execute(array($this->id, MTypeInOut::getByType(MTypeInOut::TYPE_OUT)->id));
         return $this->amount - intval($sql->fetch(PDO::FETCH_OBJ)->total);
     }
 
